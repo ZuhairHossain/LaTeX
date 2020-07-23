@@ -75,7 +75,7 @@ According to integration by parts formula, we know that, \par \par
 %line 1
 $ \int u\:v\: dx = u\int vdx - \int \frac{du}{dx}(\int vdx) dx $ \\\\
 %line 2
-$\Rightarrow \int u\:v\:dx = \frac{x^{2}}{2} \int tan^{-1}x - \int \frac{x^2}{2(x^2+1)} $ \\\\
+$\Rightarrow \int u\:v\:dx = \frac{x^{2}}{2} \int tan^{-1}x - \int \frac{x^2}{2(x^2+1)}dx $ \\\\
 %line 3
 $\Rightarrow \int u\:v\:dx = \frac{x^{2}}{2} \int tan^{-1}x - \frac{1}{2}\int (1-\frac{x^2}{2(x^2+1)}) dx $ \\\\
 %line 4
@@ -83,28 +83,33 @@ $\Rightarrow \int u \:v\:dx = \frac{x^{2}}{2} \int tan^{-1}x - \frac{1}{2} \int 
 %line 5
 $\Rightarrow \int u \:v\:dx = \frac{x^{2}}{2} \int tan^{-1}(x) - \frac{x}{2} + \frac{1}{2} \: tan^{-1}\:(x) + c$  \ \ \ \ \ \ \ \ \  $\left [ \because \frac{1}{x^2+1}] = tan^{-1} \:(x) \right ]$\\\\
 %line 6
-$\therefore \: \: \int u \:v\:dx = \frac{1}{2} ((x^2+1)tan^{-1)}(x) - x +c \ \ \ \  \left[_{answer}\right]$ \\\\
+$\therefore \: \: \int u \:v\:dx = \frac{1}{2} (x^2+1)tan^{-1}(x) - x +c \ \ \ \  \left[_{answer}\right]$ \\\\
 
 \pagebreak
 
 \subsection{$\int \sqrt{x} \: ln \: \sqrt{x}\:dx$}
+
+\begin{flushleft}
+    $=\int \sqrt{x} \: ln(x^{\frac{1}{2}})\: dx$\\
+    $=\frac{1}{2}\int \sqrt{x} \: ln(x)\: dx$\\
+\end{flushleft}
 
 
 Let, \\\\
 $u=ln(x)$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $v= \sqrt{x}$ \\\\
 $du = \frac{1}{x} \: dx$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $v=\frac{2x^{\frac{3}{2}}}{3} \:dx$
 
-\begin{align*}
-    According \: to \ integration \ &by \ parts \ formula, \ we \ know \ that,\\
-    \int u\:v\: dx &= u\int vdx - \int \frac{du}{dx}(\int vdx) dx 
-\end{align*}
+\begin{flushleft}
+    According \: to \ integration \ by \ parts \ formula, \ we \ know \ that,\\
+    $\int u\:v\: dx &= u\int vdx - \int \frac{du}{dx}(\int vdx) dx$ 
+\end{flushleft}
 
 
- $\int \sqrt{x} \: ln\:x \: \sqrt{x} \: = ln(x)\: \frac{2}{3}\:(x^{\frac{3}{2}}) \: \frac{1}{3} \: \int \sqrt{x} \: dx $ \\ 
+ $\int \sqrt{x} \: ln \: \sqrt{x} \: = ln(x)\: \frac{2}{3}\:(x^{\frac{3}{2}}) \: \frac{1}{3} \: \int \sqrt{x} \: dx $ \\ 
  
-$\Rightarrow \int \sqrt{x} \: ln\:x \: \sqrt{x} \: = \frac{1}{3} \: x^{\frac{3}{2}} \: ln(x) - \frac{2}{9} \:x^{\frac{3}{2}} + c$ \\
+$\Rightarrow \int \sqrt{x} \: ln \: \sqrt{x} \: = \frac{1}{3} \: x^{\frac{3}{2}} \: ln(x) - \frac{2}{9} \:x^{\frac{3}{2}} + c$ \\
 
-$\Rightarrow \int \sqrt{x} \: ln\:x \: \sqrt{x} \: = \frac{1}{9} \: x^{\frac{3}{2}} \: (3\:ln(x) - 2) \: + c$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [answer]\\
+$\Rightarrow \int \sqrt{x} \: ln \: \sqrt{x} \: = \frac{1}{9} \: x^{\frac{3}{2}} \: (3\:ln(x) - 2) \: + c$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [answer]\\
 
 
     
@@ -117,30 +122,31 @@ $\int_{0}^{\frac{\pi}{2}} cos^6 (x) \:dx$}
     \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)dx &= \frac{1}{6} \int_{0}^{\frac{\pi}{2}} cos ^{6-1}(x)\:sinx \:+  \frac{6-1}{6} \int_{0}^{\frac{\pi}{2}} cos^{6-2}(x)dx \\
     \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x) \: dx &= [\frac{1}{6} cos^{5}x\:sinx]_{0}^{\frac{\pi}{2}} \:+\: \frac{5}{6} \int_{0}^{\frac{\pi}{2}} cos^{4}x\:dx \\
     \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6}(x) \: dx &= 0 + \frac{5}{6} \int_{0}^{\frac{\pi}{2}} cos^{4}(x) dx \ \ \ \ \ \ [\because \frac{1}{6} cos^{5}(\frac{\pi}{2}) \: sin(\frac{\pi}{2}) \: - \frac{1}{6} cos^{5}(0) sin(0)=0]\\
-    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)\: dx &= \frac{5}{6} (\frac{1}{4} cos^{4-1}x \: sinx +\frac{4-1}{4}\int_{\frac{\pi}{2}}^{0} cos^{4-2}x \:dx)  \ \ \ \ \ \ [\because applying reduction method]\\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)\: dx &= \frac{5}{6} (\frac{1}{4} cos^{4-1}x \: sinx +\frac{4-1}{4}\int_{\frac{\pi}{2}}^{0} cos^{4-2}x \:dx)  \ \ \ \ \ \ [\because \ applying \: reduction \: method]\\
     \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6}(x) \: dx &= \left [ \frac{5}{24} cos^{3}x\:sinx \right ]_{0}^{\frac{\pi}{2}} \: + \: \frac{5}{8} \int_{0}^{\frac{\pi}{2}} cos^{2}x \: dx\\
-    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)\: dx &= 0 + \frac{5}{8} \int_{0}^{\frac{\pi}{2}}cos^{2}(x)\:dx \ \ \ \ \ \ \left[\because \frac{5}{24} cos^3(\frac{\pi}{2})\:sin(\frac{\pi}{2}) - \frac{5}{24} cos^(0)sin(0) = 0 \right]\\
-    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)\: dx &= \frac{5}{8} \int_{0}^{\frac{\pi}{2}}cos(2x) + \frac{1}{2} \int_{0}^{\frac{\pi}{2}}\\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)\: dx &= 0 + \frac{5}{8} \int_{0}^{\frac{\pi}{2}}cos^{2}(x)\:dx \ \ \ \ \ \ \left[\because \frac{5}{24} cos^3(\frac{\pi}{2})\:sin(\frac{\pi}{2}) - \frac{5}{24} cos^3(0)sin(0) = 0 \right]\\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)\: dx &= \frac{5}{8} \int_{0}^{\frac{\pi}{2}}cos(2x) + \frac{1}{2} \int_{0}^{\frac{\pi}{2}}1\:dx\\
 \end{align*}
 
 \pagebreak
 
 \begin{align*}
     let,\\
-    u &= cos 2x \\
     u &= 2x \\
-    \because u &= 2x \: dx \\
+    \because du &= 2 \: dx \\
     So,\: we \: get \: &a \: new \: lower \: bound \: from \: here, \\
     u &=2 \times 0 \\
       &= 0\\
       and \: in \: &upper \: bound \\
       u &= 2 \times \frac{\pi}{2} \\
-        &= \pi \\ 
+        &= \pi \\
+        So,\\
+        &\frac{5}{32} \int_{0}^{\pi} cos(u) du+ \frac{5}{16} \int_{0}^{\frac{\pi}{2}}1dx\\
 \end{align*}
 
 \begin{align*}
     Applying \ fundamental \ &theorem \ of \ calculus\\
-    \left[\frac{5sin(u)}{32} \right]_{0}^{\pi} &= \frac{5sin(\pi)}{32} \: - \frac{5sin(0)}{32}\\
+    \left[\frac{5sin(u)}{32} \right]_{0}^{\pi} &= \frac{5sin(\pi)}{32} \: - \frac{5sin(0)}{32}\ \ \ \ \  \ \left[\therefore \int cos(u)\: = \: sin(u)\right]\\
     \left[\frac{5sin(u)}{32} \right]_{0}^{\pi} &=0\\
 \end{align*}
 
@@ -164,10 +170,11 @@ $\int_{0}^{\frac{\pi}{2}} cos^6 (x) \:dx$}
     \frac{1}{4} &\int \frac{cos(u)}{1+2sin(u)}du\\
     y &= 2sin(u)+1\\
     dy &= 2cos(u)du\\
+    So, we \ get\\
     \frac{1}{8} &\int \frac{1}{y} \ dy \\
-    &= \frac{1}{8} \: \times \ log(y) +c \\
-    &= \frac{1}{8} \: log(2sin(u)+1)+c \\
-    &= \frac{1}{8} \: log (2sin(4\theta)+1)+c & [answer]\\
+    &= \frac{1}{8} \: \times \ ln(y) +c \\
+    &= \frac{1}{8} \: ln(2sin(u)+1)+c \\
+    &= \frac{1}{8} \: ln (2sin(4\theta)+1)+c & [answer]\\
 \end{align*}
 
 
@@ -182,7 +189,7 @@ $\int_{0}^{\frac{\pi}{2}} cos^6 (x) \:dx$}
     \therefore dx &= \frac{du}{2x} = \frac{du}{2\sqrt{u}}\\\\
     So,  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   &\\
     \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &=  \int_{0}^{\infty} (\sqrt{u} \: )^5 \:\cdot e^{-u} \cdot \frac{du}{2\sqrt{u}}\\
-    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &= \int_{0}^{\infty} u^{\frac{5}{2}} \cdot e^{-u} \cdot \frac{du}{2\:u^{-\frac{1}{2}}} du\\
+    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &= \int_{0}^{\infty} u^{\frac{5}{2}} \cdot e^{-u} \cdot \frac{du}{2\:u^{\frac{1}{2}}} \\
     \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &=  \frac{1}{2} \int_{0}^{\infty} e^{-u} \cdot u^{\frac{5-1}{2}}du\\
     \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &=  \frac{1}{2} \int_{0}^{\infty} e^{-u} \cdot u^{2}\:du\\
     \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &=  \frac{1}{2} \int_{0}^{\infty} e^{-u} \cdot u^{3-1}du\\
@@ -235,7 +242,6 @@ cannot copy paste directly. In that case you won’t receive any marks).}
    \textbf{[proved]}\\
 \end{align*}
 
-
 \begin{thebibliography}{9}
 \bibitem{latexcompanion} 
 Howard A.,Iril B., Stephen D., 
@@ -250,6 +256,7 @@ Wikipedia : Fundamental Theorem of Calculus.
 \\\texttt{https://en.wikipedia.org/wiki/Fundamental\_theorem\_of\_calculus}
 \end{thebibliography}
 
+\bigskip 
 
 \section{You are asked to integrate the following definite integrals,\\ $\int_{0}^{2\pi} sinx\:dx$}
 
@@ -259,20 +266,56 @@ Wikipedia : Fundamental Theorem of Calculus.
                              &= -\:\left[cos\:x \right]_{0}^{2\pi}\\
                              &= -[cos2\pi \: - \: cos(0)]\\
                              &= -(1-1)\\
-                             &= 0\\\\
-    According \ to \ Fundamental \ Theorem \ of \ &Calculas \ we \ know \ that \ we \ will \ get \ an \ area \ after \\ integration \ and \ area \ has \ a \ space& \ which \ is \ obviously \ greater \ than \ zero.\\
+                             &= 0\\
 \end{align*}
 
+
+\begin{parag}
+    According to Fundamental Theorem of Calculus  we know that, we will get an area after integration and area has a space which is obviously greater than zero.\\
+    But, here we are getting zero, because the value of $cos2\pi$  is  positive and the value of cos(0) is negative. So,they are neglecting each other and we are getting a linear value which is zero.
+\end{parag}
+
+\centering
+\pgfkeys{/pgfplots/Axis Style/.style={
+    width=13.5cm, height=5cm,
+    axis x line=center, 
+    axis y line=middle, 
+    samples=100,
+    ymin=-1.5, ymax=1.5,
+    xmin=-7.0, xmax=7.0,
+    domain=-2*pi:2*pi
+}}
+
+%\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    Axis Style,
+    xtick={
+        -6.28318, -4.7123889, -3.14159, -1.5708,
+        1.5708, 3.14159, 4.7123889, 6.28318
+    },
+    xticklabels={
+        $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$,
+        $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$
+    }
+]
+\addplot [mark=none, ultra thick, blue] {sin(deg(x))};
+\addlegendentry{$sin(x)$}
+\end{axis}
+\end{tikzpicture}
+
+\centering
 \begin{align*}
     &\ \ \  \ \ \ (b)\\
     \int_{0}^{2\pi} \left | sinx \right |\:dx &= \int_{0}^{\pi} +\:sinx\:dx \: + \: \int_{\pi}^{2\pi} -\: sinx\:dx\ \ \ \ \ \ \ \ \ \ \ \ \left[ plotting \ the \ value \ in \ graph\right]\\
     &= \int_{0}^{\pi} \:sinx\:dx \: - \int_{\pi}^{2\pi} +\:sinx\:dx \\
     &= \left[-cosx\right]_{0}^{\pi} - \left[-cosx \right]_{\pi}^{2\pi}\\
     &= -\left[cosx\right]_{0}^{\pi} - \left[-cosx \right]_{\pi}^{2\pi}\\
-    &= -\left[cos\pi \: cos0 \right]_{0}^{\pi} - \left[-cos2\pi \: - cos\pi \right]_{\pi}^{2\pi}\\
+    &= -\left[cos\pi \: - \: cos0\right] - \left[-cos2\pi \: - cos\pi \right]\\
     &= -\left[-1-1\right] + \left[1-(-1)\right]\\
     &= 2 \: + 2\\
     &= 4\\
     & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [answer]\\
 \end{align*}
+
 \end{document}
