@@ -1,0 +1,321 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{comment}
+
+\usepackage{pgfplots}
+%\pgfplotsset{width=10cm, compat=1.9}
+%\documentclass[border=2mm,tikz]{standalone}
+\usetikzlibrary{datavisualization}
+
+
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.2cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{MAT120: Integral Calculus and
+Differential Equations \\
+BRAC University}
+
+\author{Syed Zuhair Hossain \\ St. ID - 19101573 \\ Section - 07 \\ Set-G}
+\date{\today}
+\maketitle
+
+\section{Evaluate the following integrals by Integration by Parts}
+%Given an experiment and a sample space $\mathcal{S}$, the objective of probability is to assign to each event $\textit{A}$ a number $P(A)$, called the probability of event $\textit{A}$, which will give a precise measure of the chance that $\textit{A}$ will occur. 
+%
+\subsection{$\int x (tan^{-1}x)dx$}
+\textbf{Solution}\\\\
+%A computer consulting firm presently has bids out on three projects. Let $A_{i}$= \{awarded \ project \ i\}, for $i=1, 2, 3$, and suppose that $P(A_1)=.22$, $P(A_2)=0.25$, $P(A_3)=.28$, $P(A_1 \cap A_2)= .11$, $P(A_1\cap A_3)=0.05$, $P(A_2\cap A_3)=0.07$, $P(A_1\cap A_2 \cap A_3)=0.01$. Express in words each of the following events, and compute the probability of each event:%
+
+Let, u = x
+ \[v = tan^{-1}x\] \\
+ du = x dx      \[dv = \frac{1}{x^{2}+1} dx\] \\
+$u = \frac{x^{2}}{2}$ \\\\
+
+According to integration by parts formula, we know that, \par \par
+%line 1
+$ \int u\:v\: dx = u\int vdx - \int \frac{du}{dx}(\int vdx) dx $ \\\\
+%line 2
+$\Rightarrow \int u\:v\:dx = \frac{x^{2}}{2} \int tan^{-1}x - \int \frac{x^2}{2(x^2+1)}dx $ \\\\
+%line 3
+$\Rightarrow \int u\:v\:dx = \frac{x^{2}}{2} \int tan^{-1}x - \frac{1}{2}\int (1-\frac{x^2}{2(x^2+1)}) dx $ \\\\
+%line 4
+$\Rightarrow \int u \:v\:dx = \frac{x^{2}}{2} \int tan^{-1}x - \frac{1}{2} \int 1 \: dx + \frac{1}{2} \int (\frac{1}{x^2+1}) dx$\\\\
+%line 5
+$\Rightarrow \int u \:v\:dx = \frac{x^{2}}{2} \int tan^{-1}(x) - \frac{x}{2} + \frac{1}{2} \: tan^{-1}\:(x) + c$  \ \ \ \ \ \ \ \ \  $\left [ \because \frac{1}{x^2+1}] = tan^{-1} \:(x) \right ]$\\\\
+%line 6
+$\therefore \: \: \int u \:v\:dx = \frac{1}{2} (x^2+1)tan^{-1}(x) - x +c \ \ \ \  \left[_{answer}\right]$ \\\\
+
+\pagebreak
+
+\subsection{$\int \sqrt{x} \: ln \: \sqrt{x}\:dx$}
+
+\begin{flushleft}
+    $=\int \sqrt{x} \: ln(x^{\frac{1}{2}})\: dx$\\
+    $=\frac{1}{2}\int \sqrt{x} \: ln(x)\: dx$\\
+\end{flushleft}
+
+
+Let, \\\\
+$u=ln(x)$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $v= \sqrt{x}$ \\\\
+$du = \frac{1}{x} \: dx$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $v=\frac{2x^{\frac{3}{2}}}{3} \:dx$
+
+\begin{flushleft}
+    According \: to \ integration \ by \ parts \ formula, \ we \ know \ that,\\
+    $\int u\:v\: dx &= u\int vdx - \int \frac{du}{dx}(\int vdx) dx$ 
+\end{flushleft}
+
+
+ $\int \sqrt{x} \: ln \: \sqrt{x} \: = ln(x)\: \frac{2}{3}\:(x^{\frac{3}{2}}) \: \frac{1}{3} \: \int \sqrt{x} \: dx $ \\ 
+ 
+$\Rightarrow \int \sqrt{x} \: ln \: \sqrt{x} \: = \frac{1}{3} \: x^{\frac{3}{2}} \: ln(x) - \frac{2}{9} \:x^{\frac{3}{2}} + c$ \\
+
+$\Rightarrow \int \sqrt{x} \: ln \: \sqrt{x} \: = \frac{1}{9} \: x^{\frac{3}{2}} \: (3\:ln(x) - 2) \: + c$ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [answer]\\
+
+
+    
+\section{Use reduction formula to evaluate: \ \ \ \ \ \
+$\int_{0}^{\frac{\pi}{2}} cos^6 (x) \:dx$}
+
+\begin{align*}
+    According \: to \ &reduction \ formula \ we \ know \ that, \\
+    \int cos^n(x) \: dx &= \frac{1}{n} \: cos^{n-1}(x) sin(x) \: + \frac{n-1}{n} \: \int cos^{n-2}(x) dx \\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)dx &= \frac{1}{6} \int_{0}^{\frac{\pi}{2}} cos ^{6-1}(x)\:sinx \:+  \frac{6-1}{6} \int_{0}^{\frac{\pi}{2}} cos^{6-2}(x)dx \\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x) \: dx &= [\frac{1}{6} cos^{5}x\:sinx]_{0}^{\frac{\pi}{2}} \:+\: \frac{5}{6} \int_{0}^{\frac{\pi}{2}} cos^{4}x\:dx \\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6}(x) \: dx &= 0 + \frac{5}{6} \int_{0}^{\frac{\pi}{2}} cos^{4}(x) dx \ \ \ \ \ \ [\because \frac{1}{6} cos^{5}(\frac{\pi}{2}) \: sin(\frac{\pi}{2}) \: - \frac{1}{6} cos^{5}(0) sin(0)=0]\\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)\: dx &= \frac{5}{6} (\frac{1}{4} cos^{4-1}x \: sinx +\frac{4-1}{4}\int_{\frac{\pi}{2}}^{0} cos^{4-2}x \:dx)  \ \ \ \ \ \ [\because \ applying \: reduction \: method]\\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6}(x) \: dx &= \left [ \frac{5}{24} cos^{3}x\:sinx \right ]_{0}^{\frac{\pi}{2}} \: + \: \frac{5}{8} \int_{0}^{\frac{\pi}{2}} cos^{2}x \: dx\\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)\: dx &= 0 + \frac{5}{8} \int_{0}^{\frac{\pi}{2}}cos^{2}(x)\:dx \ \ \ \ \ \ \left[\because \frac{5}{24} cos^3(\frac{\pi}{2})\:sin(\frac{\pi}{2}) - \frac{5}{24} cos^3(0)sin(0) = 0 \right]\\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6} (x)\: dx &= \frac{5}{8} \int_{0}^{\frac{\pi}{2}}cos(2x) + \frac{1}{2} \int_{0}^{\frac{\pi}{2}}1\:dx\\
+\end{align*}
+
+\pagebreak
+
+\begin{align*}
+    let,\\
+    u &= 2x \\
+    \because du &= 2 \: dx \\
+    So,\: we \: get \: &a \: new \: lower \: bound \: from \: here, \\
+    u &=2 \times 0 \\
+      &= 0\\
+      and \: in \: &upper \: bound \\
+      u &= 2 \times \frac{\pi}{2} \\
+        &= \pi \\
+        So,\\
+        &\frac{5}{32} \int_{0}^{\pi} cos(u) du+ \frac{5}{16} \int_{0}^{\frac{\pi}{2}}1dx\\
+\end{align*}
+
+\begin{align*}
+    Applying \ fundamental \ &theorem \ of \ calculus\\
+    \left[\frac{5sin(u)}{32} \right]_{0}^{\pi} &= \frac{5sin(\pi)}{32} \: - \frac{5sin(0)}{32}\ \ \ \ \  \ \left[\therefore \int cos(u)\: = \: sin(u)\right]\\
+    \left[\frac{5sin(u)}{32} \right]_{0}^{\pi} &=0\\
+\end{align*}
+
+\begin{align*}
+    So, \ we \ get \ \ \ \ \ \ &\\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6}(x) \: dx &= \frac{5}{16} \int_{0}^{\frac{\pi}{2}} \: 1 \: dx \\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6}(x) \: dx &= \left[ \frac{5x}{16}\right]_{0}^{\frac{\pi}{2}} \\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6}(x) \: dx &= \frac{5 \pi}{32} \: - \: \frac{5\times0}{32}\\
+    \Rightarrow \int_{0}^{\frac{\pi}{2}} cos^{6}(x) \: dx &= \frac{5\pi}{32}  &  [answer]\\
+\end{align*}
+
+\pagebreak
+
+\section{Evaluate the integral using appropriate substitution: \\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $\int \frac{cos4\theta}{1+2sin\:4\theta} d\theta$}
+
+\begin{align*}
+    let, \ \ \ \ \ &\\
+    u &= 4 \theta \\
+    du &= 4\: d\theta\\
+    So, \ we \ get \ \ \ \ &\\
+    \frac{1}{4} &\int \frac{cos(u)}{1+2sin(u)}du\\
+    y &= 2sin(u)+1\\
+    dy &= 2cos(u)du\\
+    So, we \ get\\
+    \frac{1}{8} &\int \frac{1}{y} \ dy \\
+    &= \frac{1}{8} \: \times \ ln(y) +c \\
+    &= \frac{1}{8} \: ln(2sin(u)+1)+c \\
+    &= \frac{1}{8} \: ln (2sin(4\theta)+1)+c & [answer]\\
+\end{align*}
+
+
+\section{Use Gamma Function to evaluate \ $\int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx$}
+
+\begin{align*}
+    let, \ \ \ \ \ \ \ &\\
+    x^2 &= u \\
+    \Rightarrow \frac{d}{dx} (x^2) &= \frac{d}{dx}(u)\\
+    \Rightarrow 2x &= \frac{du}{dx} \\
+    \Rightarrow x\:dx &= \frac{du}{2}\\
+    \therefore dx &= \frac{du}{2x} = \frac{du}{2\sqrt{u}}\\\\
+    So,  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   &\\
+    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &=  \int_{0}^{\infty} (\sqrt{u} \: )^5 \:\cdot e^{-u} \cdot \frac{du}{2\sqrt{u}}\\
+    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &= \int_{0}^{\infty} u^{\frac{5}{2}} \cdot e^{-u} \cdot \frac{du}{2\:u^{\frac{1}{2}}} \\
+    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &=  \frac{1}{2} \int_{0}^{\infty} e^{-u} \cdot u^{\frac{5-1}{2}}du\\
+    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &=  \frac{1}{2} \int_{0}^{\infty} e^{-u} \cdot u^{2}\:du\\
+    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &=  \frac{1}{2} \int_{0}^{\infty} e^{-u} \cdot u^{3-1}du\\
+    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &= \frac{1}{2} \times \Gamma{3}\ \ \ \ \ \ \ \ \ \ \left[ \therefore \int_{0}^{\infty} \: e^{-u} \: u^{n-1} \: du \: = \Gamma{n}\right] \\
+    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &= \frac{1}{2} \times 2! \\
+    \int_{0}^{\infty} x^{5} \ e ^{-x^2} \ dx &= 1 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left[answer \right]\\
+\end{align*}
+
+\pagebreak
+
+\section{Prove the Fundamental theorem of Calculus (It cannot be an exact copy from
+any source. You can use references but it should be properly cited. Also, you
+cannot copy paste directly. In that case you won’t receive any marks).}
+
+\begin{parag}
+    According to Fundamental Theorem of Calculus we know that, if there is a graph which occupies a place say, A under the graph of f which is continuous  [a,b] and F is an anti derivative of f, then\\
+    \centering $\int _{a}^{b} f(x) dx = F(b) \: - \: F(a)$\\
+\end{parag}
+
+\begin{align*}
+    Let, \ we \ are \ &given \ an \ \ function \ f(t) \\
+    define \ the \ &function \ F(x) \ - \\
+    F(x) &= \int_{a}^{x} f(t) dt\\
+    \\
+    Say, \ x_1 \ and \ \Delta x \ &are \ two \ values\ between \ [a+b] \\
+    So, \ we \ get, \\
+    F(x_1) &= \int_{a}^{x_1} \ f(t) \ dt;\\
+    and\\
+    F(x_1 + \Delta x) &= \int_{a}^{x_1 + \Delta x} f(t) dt\\
+    If \ we \ substract, \ then \ we \ get, &\\
+    \int_{a}^{x_1+ \Delta x} f(t)dt - \int_{a}^{x_1} f(t) dt &=  \int_{x_1}^{x_1+ \Delta x} f(t)dt\\
+    F(x_1 + \Delta x) - F(x_1) &= \int_{x_1}^{x_1+ \Delta x} f(t)dt\\\\
+    According \ to \ mean \ & value \ theorem,\\
+    A \ real \ number \ exists \ &between \ r \in [x_1, x_1+\Delta] \\ 
+    \int_{x_1}^{x_1+ \Delta x} f(t)dt &= f(r) \cdot \Delta x\\
+    F(x_1 + \Delta x)- F(x_1) &= f(r) \cdot \Delta x\\
+    \frac{F(x_1 + \Delta x)- F(x_1)}{\Delta x} &= f(r) \cdot \Delta x\\
+    \lim_{\Delta x \to 0} \frac{F(x_1 + \Delta x)- F(x_1)}{\Delta x} &= \lim_{\Delta x \to 0} f(r) \\
+    {F}'(x_1) &= \lim_{\Delta x \to 0} f(r) \ \ \ \ \ \ \ \left[\therefore \lim_{\Delta x \to 0} \frac{F(x_1 + \Delta x)- F(x_1)}{\Delta x}={F}'(x_1) \right]\\
+\end{align*}
+
+\newpage
+
+\begin{align*}
+    So, \lim_{\Delta x \to 0}x_1 \ &= x_1 \\
+    and \lim_{\Delta x \to 0}x_1 + \Delta x \ &= x_1\\
+   \therefore \lim_{\Delta x \to 0}r \ &= x_1\\
+   We \ can \ now \ say \ that, \ & \ f \ is \ continuous \ at \ r,\\
+   \therefore {F}'(x_1) = f(x_1)\\\\
+   \textbf{[proved]}\\
+\end{align*}
+
+\begin{thebibliography}{9}
+\bibitem{latexcompanion} 
+Howard A.,Iril B., Stephen D., 
+\textit{Calculus}. 
+10th ed.,John Willey and Sons, United States of America, 2012.
+
+\bibitem{Spivak} 
+Spivak, Michael (1980), Calculus (2nd ed.), Houston, Texas: Publish or Perish Inc.
+
+\bibitem{Wikipedia} 
+Wikipedia : Fundamental Theorem of Calculus.
+\\\texttt{https://en.wikipedia.org/wiki/Fundamental\_theorem\_of\_calculus}
+\end{thebibliography}
+
+\bigskip 
+
+\section{You are asked to integrate the following definite integrals,\\ $\int_{0}^{2\pi} sinx\:dx$}
+
+\begin{align*}
+    (a)\\
+    \int_{0}^{2\pi} sinx\:dx &= \left[-cos\:x \right]_{0}^{2\pi}\\
+                             &= -\:\left[cos\:x \right]_{0}^{2\pi}\\
+                             &= -[cos2\pi \: - \: cos(0)]\\
+                             &= -(1-1)\\
+                             &= 0\\
+\end{align*}
+
+
+\begin{parag}
+    According to Fundamental Theorem of Calculus  we know that, we will get an area after integration and area has a space which is obviously greater than zero.\\
+    But, here we are getting zero, because the value of $cos2\pi$  is  positive and the value of cos(0) is negative. So,they are neglecting each other and we are getting a linear value which is zero.
+\end{parag}
+
+\centering
+\pgfkeys{/pgfplots/Axis Style/.style={
+    width=13.5cm, height=5cm,
+    axis x line=center, 
+    axis y line=middle, 
+    samples=100,
+    ymin=-1.5, ymax=1.5,
+    xmin=-7.0, xmax=7.0,
+    domain=-2*pi:2*pi
+}}
+
+%\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    Axis Style,
+    xtick={
+        -6.28318, -4.7123889, -3.14159, -1.5708,
+        1.5708, 3.14159, 4.7123889, 6.28318
+    },
+    xticklabels={
+        $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$,
+        $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$
+    }
+]
+\addplot [mark=none, ultra thick, blue] {sin(deg(x))};
+\addlegendentry{$sin(x)$}
+\end{axis}
+\end{tikzpicture}
+
+\centering
+\begin{align*}
+    &\ \ \  \ \ \ (b)\\
+    \int_{0}^{2\pi} \left | sinx \right |\:dx &= \int_{0}^{\pi} +\:sinx\:dx \: + \: \int_{\pi}^{2\pi} -\: sinx\:dx\ \ \ \ \ \ \ \ \ \ \ \ \left[ plotting \ the \ value \ in \ graph\right]\\
+    &= \int_{0}^{\pi} \:sinx\:dx \: - \int_{\pi}^{2\pi} +\:sinx\:dx \\
+    &= \left[-cosx\right]_{0}^{\pi} - \left[-cosx \right]_{\pi}^{2\pi}\\
+    &= -\left[cosx\right]_{0}^{\pi} - \left[-cosx \right]_{\pi}^{2\pi}\\
+    &= -\left[cos\pi \: - \: cos0\right] - \left[-cos2\pi \: - cos\pi \right]\\
+    &= -\left[-1-1\right] + \left[1-(-1)\right]\\
+    &= 2 \: + 2\\
+    &= 4\\
+    & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [answer]\\
+\end{align*}
+
+\end{document}
