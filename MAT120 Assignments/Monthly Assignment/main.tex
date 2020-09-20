@@ -1,0 +1,919 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+
+
+\newcommand{\hmwkTitle}{Monthly Assignment\ \#Set-D}
+\newcommand{\hmwkDueDate}{\textbf{Multiple Author}}
+\newcommand{\hmwkClass}{MAT120}
+\newcommand{\hmwkClassTime}{}
+\newcommand{\hmwkClassInstructor}{\item Tarannaum Jahan Sultan  [ Sec-05, ID-19101348 ]\\[5mm]
+Sanzida Akter  [ Sec-06, ID-19101584 ]\\[5mm]
+Kaosar Ahmed  [ Sec-18, ID-19101328 ]\\[5mm]
+Md Aminul Haque  [ Sec-08,  ID-19101580 ]\\[5mm]
+Syed Zuhair Hossain  [ Sec-07, ID-19101573 ]
+}
+\newcommand{\hmwkAuthorName}{\textbf{BRAC University}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{ \hmwkDueDate}\\
+    \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 01%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}
+    \[      \textbf{\underline{Answer to the Question Number One}}
+    \]
+    \textbf{Part (a)}
+    \\
+    \[
+    \begin{split}
+        Given,&
+        \\
+        P(a \leq x \leq b) &= \int_{a}^{b} f(x) dx 
+        \\
+        f(x) &=
+        \begin{cases}
+                0 , \ \ \ \ \ \ \ \ \ \  x \leq 0 
+                \\
+                kc^{-kx} , \ \ \ \ x \geq 0 
+        \end{cases}
+        \\ \\
+        \textit{Since accidents are occurring at a rate one of every 3 months,}
+        \\
+         k &= 3 
+        \\
+        \therefore f(x) &= k e^{-kx}
+        \\
+        &= 3 e^{-3x}
+    \end{split}
+    \]
+\end{homeworkProblem}
+\\ \\ \\ \\ \\ 
+
+\begin{homeworkProblem}
+    \textbf{Probability of no accident during 8 month interval is,} \\
+    \[
+    \begin{split}
+        P(x \geq 8) &= 1 - (8 \geq x \geq 0) 
+        \\
+        &= 1 - \int_{0}^{8} 3 e^{-3x} dx
+        \\
+        &= 1 - 3 \left[\frac{e^{-3x}}{-3} \right]_{0}^{8}
+        \\
+        &= 1 + \left[e^{-3x} \right]_{0}^{8}
+        \\
+        &= 1 + \left[e^{24} - e^0 \right]
+        \\
+        &= 1 + e^{24} - 1
+        \\
+        &= 3.8 \times 10^{-11}
+    \end{split}
+    \\
+    \\
+    \\ \\ \\ \\
+    \centering\textbf{The Probability or chance of no accident in 8 month is 3.8 $\times 10^{-11}$.}
+    \\
+    \centering\textbf{Since, the value is very small, it can be said that the changes were effective.
+    }
+    \]
+\end{homeworkProblem}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 02%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}
+    \[      \textbf{\underline{Answer to the Question Number Two}}
+    \]
+    \textbf{Part (a)}
+    \\
+    \[
+    \begin{split}
+    &d[HBr] = K [H_2][Br_2]^{\frac{1}{2}}
+    \\
+    \textit{for this reaction, Differential Equation comes,}
+    \\
+    \frac{dx}{dt} = k(a-x)(b-x)^{\frac{1}{2}}
+    \\
+    where,
+    \\
+    x = [HBr] \ \& \ a,b \ are \ the \ initial \ concentrations \ of \ hydrogen \ and \ bromine
+    \end{split}
+    \]
+    \\
+    \[
+    \begin{split}
+        \textbf{(a)}
+        \\
+        \frac{dx}{dt} &= k (a-x)(b-x)^{\frac{1}{2}}
+        \\
+        &= k(a-x)^{\frac{3}{2}}
+        \\
+        \Rightarrow \frac{dx}{(a-x)^{\frac{3}{2}}} dx &= k dt
+        \\
+    \end{split}
+    \]
+    \\
+    \[
+    \begin{split}
+        Let,\\
+        u = a-x\\
+        \Rightarrow du = -dx\\
+        \Rightarrow -dx = du\\
+        \therefore dx = -du\\\\
+      \textbf{Integrating both sides and plugging the value}
+      \\\\
+      &\Rightarrow - \int \frac{1}{u^{\frac{3}{2}}} du = \int k dt
+      \\
+      &\Rightarrow \frac{-u^{-\frac{1}{2}}}{-\frac{1}{2}} = \int k dt
+      \\
+      &\Rightarrow 2u^{-\frac{1}{2}} = kt + c
+      \\
+      &\Rightarrow 2 (a-x)^{-\frac{1}{2}} = kt + c
+      \\
+      &\Rightarrow (a-x)^{\frac{1}{2}} = \frac{kt + c}{2}
+      \\
+      &\Rightarrow \sqrt{a-x} = \frac{2}{kt + c}
+      \\
+      &\Rightarrow x = a-\frac{4}{(kt+c)^2}
+    \end{split}
+    \]
+    \pagebreak
+    \[
+    \begin{split}
+        &Now,
+        \\
+        &x(0) = 0
+        \\
+        So,
+        \\
+        x=0, \ \ \ \ \ \ & \ \ \ \ \ t = 0
+        \\
+        x &= a-\frac{4}{(kt+c)^2}
+        \\
+        \Rightarrow 0 &= a - \frac{4}{c^2}
+        \\
+        \Rightarrow a &= \frac{4}{c^2}
+        \\
+        \Rightarrow c &= \sqrt{\frac{4}{a}}
+        \\
+        c &= \frac{2}{\sqrt{a}}
+        \\\\
+        \therefore x &= a - \frac{4}{\left(kt + \frac{2}{\sqrt{a}} \right)^2}
+        \\ \\ \\ \\ \\ \\ \textbf{[Answer]}
+    \end{split}
+    \]
+\end{homeworkProblem}
+\\\\
+\begin{homeworkProblem}
+    \textbf{Part=b}
+    \\
+    \[
+    \begin{split}
+        \textbf{The differential equation is}&
+        \\
+        &\frac{dx}{dt} = k (a-x)(b-x)^{\frac{1}{2}}
+        \\
+        &\Rightarrow \frac{dx}{(a-x)(b-x)^{\frac{1}{2}}} = kdt
+        \\
+        &\Rightarrow \int \frac{dx}{(a-x) \sqrt{b-x}} = \int k dt\ \ \ \ \ \ \ \ \  \ \ \textit{[Integrating both sides]}
+        \\\\\\
+        Let,
+        \\
+        &u = \sqrt{b-x}
+        \\
+        &\Rightarrow u^2 = b-x
+        \\
+        &\Rightarrow x = b- u^2
+        \\
+        &\Rightarrow dx = - 2 u du
+        \\
+        &\Rightarrow - dx = 2 u du
+    \end{split}
+    \]
+    \pagebreak
+    \[
+    \begin{split}
+        & \Rightarrow - 2 \int \frac{1}{(a-b+u^2)} du = kt + c
+        \\
+        & \Rightarrow \frac{1}{(\sqrt{a-b})^2 + u^2} du = kt + c
+        \\
+        & \Rightarrow - \frac{2}{\sqrt{a-b}} tan^{-1} \frac{u}{\sqrt{a-b}} = kt + c  \ \ \ \ \ \ \ \ \ \ \ 
+        \left[\because \int \frac{1}{a^2 - u^2}du = \frac{1}{a}tan^{-1} (\frac{u}{a})+c \right]
+        \\
+        &\Rightarrow - \frac{2}{\sqrt{a-b}} tan^{-1} \sqrt{\frac{b-x}{a-b}} = kt + c
+        \\\\
+        &x(0) = 0
+        \\
+        So,
+        \\
+        &x=0 \ \ \ \ \ \ \ \ \ \ t=0
+        \\
+        &\Rightarrow \frac{-2}{\sqrt{a-b}} tan^{-1} \sqrt{\frac{b-0}{a-b}} = k \cdot (0) + c 
+        \\
+        &\Rightarrow \frac{-2}{\sqrt{a-b}} tan^{-1} \sqrt{\frac{b}{a-b}} = c
+        \\\\\\
+        & \textbf{Therefore,}
+        \\
+        &\frac{-2}{\sqrt{a-b}} tan^{-1} \sqrt{\frac{b-x}{a-b}} = kt - \frac{2}{\sqrt{a-b}} tan^{-1} \sqrt{\frac{b}{a-b}}
+        \\
+        &\therefore t = \frac{2}{k\sqrt{a-b}}
+        \\ \\ \\ \\
+        &\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{[Answer]}
+    \end{split}
+    \]
+\end{homeworkProblem}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 03%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}
+    \[      \textbf{\underline{Answer to the Question Number Three}}
+    \]
+    (a)
+
+\begin{align*}
+    Given\:\:that,\\
+    & m \frac{dv}{dt}=mg-cv\\
+    &\Rightarrow m \frac{dv}{mg-cv}=dt\\
+    &\Rightarrow m \int \frac{dv}{mg-cv}=\int dt\\
+    &\Rightarrow -\frac{m}{c}ln|mg-cv|=t+C \\
+    &\Rightarrow -\frac{m}{c}ln(mg-cv)=t+C\:\:.....(1)\\
+\end{align*}
+As the object dropped from rest, here-
+\par
+\vspace{5mm}
+\hspace{60mm}
+v=0 and t=0
+\begin{align*}
+    So,\\
+    &\Rightarrow -\frac{m}{c}\:ln\:mg=C \\
+    \vspace{5mm}
+    &Now,\:\:putting\:\:value\:\:of\:\:C\:\:in\:\:Eq.(1)\\
+    \vspace{5mm}
+    &\Rightarrow -\frac{m}{c}\:ln\:(mg-cv)=t-\frac{m}{c}ln\:mg\\
+    &\Rightarrow \frac{m}{c}\:ln\:\frac{mg}{(mg-cv)}=t\\
+    &\Rightarrow ln\:\frac{mg}{(mg-cv)}=\frac{c}{m}t\\
+    &\Rightarrow \frac{mg}{(mg-cv)}=e^{ct/m}\\
+    &\Rightarrow mg-cv=\frac{mg}{e^{ct/m}}\\
+    &\Rightarrow mg-cv=mge^{-ct/m}\\
+    &\Rightarrow cv=mg-mge^{-ct/m}\\
+    &\Rightarrow v=\frac{mg}{c}(1-e^{-ct/m})\\
+    So,\\
+    &v=\frac{mg}{c}(1-e^{-\frac{c}{m}t})\:\:\:\:\:\:[Solved]\\
+\end{align*}
+
+\newpage
+\vspace{5mm}
+\hspace{20mm}
+\large
+(b)
+\par
+\vspace{5mm}
+\hspace{40mm}
+Given that,
+\par
+\hspace{70mm}
+v(t)=s'(t)
+\begin{align*}
+    So,\\
+    &s(t)=\int_{0}^{t}\:v(\tau)d\tau\\
+    We\:\:have\:\:found\:\:from \:(a),\\
+    &v=\frac{mg}{c}(1-e^{-\frac{c}{m}t})\\
+    putting\:\:the\:\:value\:\:of\:\:v,\\
+    &s(t)=\int_{0}^{t}\:\frac{mg}{c}(1-e^{-\frac{c}{m}\tau})\:dt\\
+    &= \frac{mg}{c}\:{[\tau+\frac{m}{c}e^{-\frac{c}{m}\tau}]}_{0}^{t}\\
+    &=\frac{mg}{c}t+\frac{m^2 g}{c^2}e^{-\frac{c}{m}t}-\frac{m^2 g}{c^2}\\
+\end{align*}
+\par
+\hspace{110mm}
+\Large Ans.
+
+\end{homeworkProblem}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 04%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{homeworkProblem}
+    \[      \textbf{\underline{Answer to the Question Number Four}}
+    \]
+    
+    \textbf{Part (a)}
+    \[
+    \begin{split}
+        Given,
+        \\
+        &\int_{-\infty}^{+\infty} \rho (x) = 1
+        \\
+        & \therefore \rho (x) = A e^{-\lambda (x-a)^2}
+        \\ \\
+        \textbf{As, A, a and $\lambda$ are constants}
+        \\
+        let,
+        \\
+        &u = \lambda (x-a)
+        \\
+        &u^2 = (\sqrt{\lambda})^2(x-a)^2
+        \\
+        \therefore \frac{du}{dx} = \sqrt{\lambda}
+        \\
+        \Rightarrow dx = \frac{du}{\sqrt{\lambda}}
+    \end{split}
+     \]
+     \biggap
+     \[ 
+     \begin{split}
+         & \int_{-\infty}^{+\infty} \rho (x) = 1
+         \\
+         & \Rightarrow \int_{-\infty}^{+\infty} A e^{-\lambda (x-a)^2} =1
+         \\
+         & \Rightarrow A \int_{-\infty}^{+\infty} e^{-u^2} \frac{du}{\sqrt{\lambda}} =1 \ \ \ \ \ [Plugging \ the \ value]
+         \\
+         & \Rightarrow \frac{A}{\sqrt{\lambda}} \int_{-\infty}^{+\infty} e^{-u^2} du = 1
+         \\
+         &\Rightarrow \frac{A}{\sqrt{\lambda}} \times \sqrt{\pi} = 1
+         \\
+         &\Rightarrow A \sqrt{\pi} = \sqrt{\lambda}
+         \\
+         &\therefore A = \sqrt{\frac{\lambda}{\pi}}
+     \end{split}
+     \]
+     
+\end{homeworkProblem}
+\pagebreak
+\begin{homeworkProblem}
+    \textbf{Part (b)}
+    \\
+    \[
+    \begin{split}
+         < x > &= \int_{-\infty}^{\infty} x \rho (x) dx
+        \\
+        &= \int_{-\infty}^{\infty} x A e^{-\lambda (x-a)^2} dx
+        \\
+        &= A \int_{-\infty}^{\infty} x e^{-\lambda (x-a)^2} dx
+        \\
+        &= \sqrt{\frac{\lambda}{\pi}} x e^{-\lambda (x-a)^2} dx
+    \\
+    Let,
+    \\
+    &u = x-a; \ \ \ \  \ ; x=u+a
+    \\
+    &\Rightarrow \frac{du}{dx} = 1\\
+    \Rightarrow dx = du
+    \\
+    < x > & = \sqrt{\frac{\lambda}{\pi}} \int_{-\infty}^{+\infty} (u+a) e^{-\lambda u^2} du
+    \\
+    &= \sqrt{\frac{\lambda}{\pi}} \int_{-\infty}^{+\infty} \left[- \frac{1}{2 \lambda} e^{-\lambda u^2} du + a \int_{-\infty}^{+\infty} e^{- \lambda u^2} du \right]
+    \\
+    Here,
+    \\
+    &\int_{-\infty}^{\infty} ue^{-\lambda u^2} du = \int_{-\infty}^{0} ue^{-\lambda u^2} du + \int_{0}^{+\infty} ue^{-\lambda u^2} du
+    \\
+    Let,
+    \\
+    v = - \lambda u^2
+    \\
+    \Rightarrow \frac{dv}{du} = - 2u\lambda
+    \\
+    \therefore \int - ue^2 \frac{dv}{2u\lambda} &= \int - ue^2 \frac{dv}{2\lambda}
+    \\
+    &= - \frac{1}{2 \lambda} \int e^2 dv
+    \\
+    &= - \frac{1}{2 \lambda} e^2
+    \\
+    &= - \frac{1}{2 \lambda} e^{-\lambda u^2}
+    \\
+    \end{split}
+    \]
+    \pagebreak
+    \begin{split}
+        \int_{-\infty}^{\infty} u e^{\lambda u^2} du = \left[ - \frac{1}{2 \lambda} e^{-\lambda u^2} \right]
+    \end{split}
+\end{homeworkProblem}
+\pagebreak
+\begin{homeworkProblem}
+    \[
+    \begin{split}
+        \therefore  \int_{-\infty}^{+\infty} u e^{-\lambda u^2} du &= \left[- \frac{1}{2 \lambda}e^{-\lambda u^2} \right]_{-\infty}^{0} + \left[- \frac{1}{2\lambda} e^{-\lambda u^2} \right]_{0}^{+\infty}
+        \\
+        &= - \frac{1}{2 \lambda} e^0 - 0 + 0 + \frac{1}{2 \lambda} e^0
+        \\
+        &= - \frac{1}{2 \lambda} e^0 + \frac{1}{2 \lambda} e^0
+        \\
+        &= 0
+    \end{split}
+    \]
+    \\
+    \\
+    \[
+    \begin{split}
+      \therefore < x > &= \sqrt{\frac{\lambda}{\rho}} [0 + a \cdot \frac{\pi}{\lambda}] 
+      \\
+      &= \frac{\sqrt{\lambda}}{\pi} \cdot a \cdot \frac{\sqrt{\pi}}{\lambda}
+      \\
+      &= a
+    \end{split}
+    \]
+    \\
+    \\
+    \[
+    \begin{split}
+      < x^2 > &= A \int_{-\infty}^{+\infty} (u+a)^2 e^{-\lambda u^2} du
+      \\
+      &= A \int_{-\infty}^{+\infty} u^2e^{-\lambda u^2} + 2 a u e^{-\lambda u^2} + a^2 e^{-\lambda u^2} du
+      \\
+      &= A \left[ \int_{-\infty}^{+\infty} u^2 e^{-\lambda u^2} du + 2a \int_{-\infty}^{+\infty} u e^{-\lambda u^2} du + \int_{-\infty}^{+\infty} e^{-\lambda u^2} du \right]
+      \\
+      &= A \left[ \int_{-\infty}^{+\infty} u^2 e^{-\lambda u^2} du +
+      0 + a^2 \sqrt{\frac{\pi}{\lambda}}\right]
+    \end{split}
+    \]
+    \\\\
+    
+    \[
+    \begin{split}
+        We \ know,
+        \\
+        \frac{d}{dx} \int_{a}^{b} f(x,t) dt &= \int_{a}^{b} \frac{\partial}{\partial x} f(x,t) dt
+        \\
+        Let,
+        \\
+        I(\lambda) &= \int_{-\infty}^{\infty} e^{-\lambda u^2} du \ . \ . \ . \ . \ . \ . \ . \ . \ . \ . \ . \ . \ . \ . \ . \ . \ . \ (i)
+        \\
+        \Rightarrow \frac{dI}{d\lambda} &= \int_{-\infty}^{\infty} \frac{\partial}{\partial \lambda} e^{-\lambda u^2} du
+        \\
+        &= \int_{-\infty}^{\infty} -u^2 e^{-\lambda u^2} du
+    \end{split}
+    \]
+\end{homeworkProblem}
+\pagebreak
+\begin{homeworkProblem}
+    \[
+    \begin{split}
+        \textbf{}
+        \\
+        I(\lambda) = \int_{-\infty}^{+\infty}  e^{-\lambda u^2} du
+        \\
+        &= \sqrt{\frac{\pi}{\lambda}}
+        \\
+        \frac{dI}{d\lambda} &= \sqrt{\pi} \frac{d}{d\lambda} (\frac{1}{\lambda})
+        \\
+        &= \frac{\sqrt{\pi}}{2} \lambda^{-\frac{3}{2}}\\
+    \end{split}
+    \]
+    \\
+    \[
+    \begin{split}
+        So,
+        \\
+        & - \frac{\sqrt{\pi}}{2} \lambda ^{-\frac{3}{2}} = - \int_{-\infty}^{+\infty} u^2 e^{-\lambda u^2} du
+        \\ \\ \\
+        \therefore < x^2 > &= A \left[\frac{\pi}{2} \lambda^{-\frac{3}{2}} + a^2 \sqrt{\frac{\pi}{\lambda}}\right]
+        \\
+        &= \frac{\sqrt{\lambda}}{\sqrt{\pi}} \cdot \frac{\sqrt{\pi}}{2}
+        \cdot \lambda^{-\frac{3}{2}} + \sqrt{\frac{\lambda}{\pi}} \cdot a^2 \sqrt{\frac{\pi}{\lambda}}
+        \\
+        &= \frac{1}{2 \lambda} + a^2
+        \\\\
+        &\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{[Answer]}
+    \end{split}
+    \]
+    
+\end{homeworkProblem}
+
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 05%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}
+
+    \[ \textbf{\underline {Answer to the Question Number Five}}
+    \]
+    \[
+    \textbf{\underline{ Part(a)}}
+    \]
+\vspace{5mm}
+\hspace{20mm}    
+\begin{align*}
+\large
+   &Here,\ given\ a\ wave-function\ of\ a\ particle\ of\ constant\ mass\ m,\\
+   & \psi = A exp^{( \frac{-amx^{2}}{\hbar})}\\
+   &\therefore \ \ =A e^{( \frac{-amx^{2}}{\hbar})}\ \ \  \ [ notation \ e^{x} \ = \ exp(x)]\\
+   &Given\ that\\
+   \ \ &\int_{-\infty}^{\infty}\psi . \psi dx = 1\\\\
+   &\Rightarrow \int_{-\infty}^{\infty}A e^{( \frac{-amx^{2}}{\hbar})} . A e^{( \frac{-amx^{2}}{\hbar})} dx = 1\\
+   &\Rightarrow \int_{-\infty}^{\infty}A^{2} e^{(\frac{-2amx^{2}}{\hbar})} dx = 1\\
+   &\Rightarrow A^{2} \int_{-\infty}^{\infty} e^{-(\frac{\sqrt {2am}}{\sqrt{\hbar}}\ .x)^{2}} dx = 1\\
+   We\ know, \int_{-\infty}^{\infty} e^{-x^{2}} dx = \sqrt{\pi}\\\\
+   Now, \int_{-\infty}^{\infty} e^{-cx^{2}} dx = \frac{1}{c} \int_{-\infty}^{\infty} e^{-x^{2}} dx\\ 
+   \Rightarrow \frac{1}{c} \int_{-\infty}^{\infty} e^{-x^{2}} dx  =\frac{1}{c} \sqrt{\pi}\\
+   &So,\\
+   & A^{2} \int_{-\infty}^{\infty} e^{-(\frac{\sqrt {2am}}{\sqrt{\hbar}}\ .x)^{2}} dx = 1\\\\
+   &\Rightarrow A^{2}({\frac{1}{\frac{\sqrt{2am}}{\sqrt{\hbar}}}\ . \sqrt{\pi}}) = 1\\\\
+   &\Rightarrow A^{2}{\frac{\sqrt{\pi}}{\sqrt{\frac{2am}{\hbar}}}} =1\\\\
+   &\Rightarrow A^{2}\sqrt{\pi}.{\sqrt{\frac{\hbar}{2am}}} =1\\\\
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+  &\Rightarrow A^{2}  \sqrt{\frac{\pi \hbar}{2am}} =1\\\\
+  &\Rightarrow A^{2}=  \sqrt{\frac{2am}{\pi \hbar}}\\\\
+  &\Rightarrow A= \sqrt[4]{\frac{2am}{\pi \hbar}}\\\\
+  So,\\
+  &A =\sqrt[4]{\frac{2am}{\pi \hbar}}\ \ \ [ m, \hbar \ and \ a\ are \ constants ]\\\\
+  Answer: A =\sqrt[4]{\frac{2am}{\pi \hbar}}\\\\
+\end{align*}
+\newpage\vspace{5mm}
+    \[
+    \textbf{\underline{ Part(b)}}
+    \]
+\hspace{20mm}
+\begin{align*}
+\large
+  &Here,\\
+  &<x> =\int_{-\infty}^{\infty}\psi \hat{x} \psi dx\\
+  &<p> =\int_{-\infty}^{\infty}\psi \hat{ p} \psi dx\\\\
+  &Now\ computing,\\
+  &<x> =\int_{-\infty}^{\infty}\psi x \psi dx\ \ \ [since,\hat{x} = x]\\
+  &\Rightarrow <x> =\int_{-\infty}^{\infty} x |\psi|^{2} dx\\
+  &= \int_{-\infty}^{\infty}x\ A e^{( \frac{-amx^{2}}{\hbar})} . A e^{( \frac{-amx^{2}}{\hbar})} dx\ \ \ \ [since, \psi =A e^{( \frac{-amx^{2}}{\hbar})}]\\
+   &= \int_{-\infty}^{\infty}x\ A^{2} e^{(\frac{-2amx^{2}}{\hbar})} dx \\\\
+   let\ substitute,u = \frac{-2amx^{2}}{\hbar}\\
+   \Rightarrow du =- \frac{2am}{\hbar}. \ \frac{d}{dx}(x^{2})\\
+   \Rightarrow \frac{du}{dx} =-\frac{2(2)amx}{\hbar}\\
+   \Rightarrow \frac{du}{dx} = -\frac{4amx}{\hbar}\\
+   \Rightarrow dx= -\frac{\hbar}{4amx} du\\
+   &so,\\
+   &\int_{-\infty}^{\infty}x\ A^{2} e^{(\frac{-2amx^{2}}{\hbar})} dx \\\\
+   &=\int_{-\infty}^{\infty}x\ A^{2} e^{u} (-\frac{\hbar}{4amx}) du \\\\
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}   
+   &=\int_{-\infty}^{\infty}\ A^{2} e^{u} (-\frac{\hbar}{4am}) du \\\\
+   &=-\frac{A^{2}\hbar}{4am}\int_{-\infty}^{\infty}\  e^{u} du\\\\
+   &=-\frac{A^{2}\hbar}{4am}\int_{-\infty}^{0}\  e^{u} du -\frac{A^{2}\hbar}{4am}\int_{0}^{\infty}\  e^{u} du\\\\
+   &=-\frac{A^{2}\hbar}{4am}\lim_{t\to-\infty} \int_{t}^{0}\  e^{u} du -\frac{A^{2}\hbar}{4am}\lim_{t\to\infty} \int_{0}^{t}\  e^{u} du\\\\
+   &=-\frac{A^{2}\hbar}{4am}\lim_{t\to-\infty} [ e^{u} ]_{t}^{0} -\frac{A^{2}\hbar}{4am}\lim_{t\to\infty} [  e^{u}]_{0}^{t}\\\\
+   &=-\frac{A^{2}\hbar}{4am}( e^{0} - e^{-\infty} ) -\frac{A^{2}\hbar}{4am}( e^{\infty} - e^{0} )\\\\
+   &=-\frac{A^{2}\hbar}{4am}( 1 - e^{-\infty} ) -\frac{A^{2}\hbar}{4am}( e^{\infty} -1 )\\\\
+   &=-\frac{A^{2}\hbar}{4am}+ \frac{A^{2}\hbar}{4am} e^{-\infty}  -\frac{A^{2}\hbar}{4am} e^{\infty} +\frac{A^{2}\hbar}{4am} )\\\\
+   &= 0\\
+   So,\\
+   &<x>=0
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+  &Now\ computing,\\
+  &<p> =\int_{-\infty}^{\infty}\psi \ \hat{p}\ \psi dx\\\\
+   &<p> =\int_{-\infty}^{\infty}\psi \ -i\hbar\frac{d}{dx}\ (\psi) dx \ \ \ \ [since,\hat{p} =-i\hbar\frac{d}{dx}] \\\\
+   here,\\
+   &i\hbar\frac{d}{dx}\ (\psi)= i\hbar\frac{d}{dx}(A e^{( \frac{-amx^{2}}{\hbar})})\\\\
+   &=i\hbar A e^{( \frac{-amx^{2}}{\hbar})}\frac{d}{dx}(\frac{-amx^{2}}{\hbar})\\\\
+   &=i\hbar A e^{( \frac{-amx^{2}}{\hbar})}(-\frac{am}{\hbar}\ . \frac{d}{dx}{x^{2}})\\\\
+   &=i\hbar A e^{( \frac{-amx^{2}}{\hbar})}(-\frac{am}{\hbar}\ )2x\\\\
+   &=-\frac{i\hbar A e^{( \frac{-amx^{2}}{\hbar})}am2x}{\hbar}\\\\
+   &=-2iAamxe^{-\frac{amx^{2}}{\hbar}}\\\\
+   So, \ now,\\
+   &\int_{-\infty}^{\infty}\psi \ \hat{p}\ \psi dx\\\\
+   &=\int_{-\infty}^{\infty}\psi \ -i\hbar\frac{d}{dx}\ (\psi) dx\\\\
+   &=\int_{-\infty}^{\infty} A e^{( \frac{-amx^{2}}{\hbar})} \ 2iAamxe^{-\frac{amx^{2}}{\hbar}}\ dx\\\\
+   &=2A^{2}iam\int_{-\infty}^{\infty} x e^{( \frac{-amx^{2}}{\hbar})}. \ e^{( \frac{-amx^{2}}{\hbar})} dx
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+  &=2iamA^{2}\int_{-\infty}^{\infty} x e^{(\frac{-2amx^{2}}{\hbar})} dx\\\\
+  &since <x> = A^{2} \int_{-\infty}^{\infty}x\  e^{(\frac{-2amx^{2}}{\hbar})} dx \\\\
+  &\Rightarrow<x>=0\ \ \ [we \ got\ by\ computing\ <x>] \\\\
+  &therefore,\\
+  &<p>=2iamA^{2}\int_{-\infty}^{\infty} x e^{(\frac{-2amx^{2}}{\hbar})} dx\\\\
+  &=2iamA^{2} \ . 0 \\\\
+  &=0\\\\
+  &So, <p> = 0\\\\
+  &Answer:<x>=0 ,<p>=0\\\\
+\end{align*}
+\newpage\vspace{5mm}
+ \[
+    \textbf{\underline{ Part(c)}}
+    \]
+\hspace{20mm}
+\large
+\begin{align*}
+  &<x^{2}> =\int_{-\infty}^{\infty}\psi \hat{x^{2}} \psi dx\\
+  &<p^{2}> =\int_{-\infty}^{\infty}\psi \hat{ p^{2}} \psi dx\\\\
+  &Now\ computing,\\
+  &<x^{2}> =\int_{-\infty}^{\infty}\psi x^{2} \psi dx\ \ \ [since,\hat{x^{2}} = x^{2}]\\\\
+  &= \int_{-\infty}^{\infty}x^{2}\ A e^{( \frac{-amx^{2}}{\hbar})} . A e^{( \frac{-amx^{2}}{\hbar})} dx\ \ \ \ [since, \psi =A e^{( \frac{-amx^{2}}{\hbar})}]\\\\
+   &= \int_{-\infty}^{\infty}x^{2}\ A^{2} e^{(\frac{-2amx^{2}}{\hbar})} dx \\\\
+   &= \int_{-\infty}^{\infty}x^{2}\ A^{2} e^{(-{\sqrt{\frac{2am}{\hbar}}}x)}^{2} dx \\\\
+   let\ substitute,\\
+   u = {\sqrt{\frac{2am}{\hbar}}} x\\\\
+   \Rightarrow \frac{du}{dx} = {\sqrt{\frac{2am}{\hbar}}} \ . 1\\\\
+   \Rightarrow du = {\sqrt{\frac{2am}{\hbar}}} dx\\\\
+   \Rightarrow dx =  {\sqrt{\frac{\hbar}{2am}}} du\\\\
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+   &here,\\
+  & u = {\sqrt{\frac{2am}{\hbar}}} x\\
+  &\Rightarrow x {\sqrt{\frac{2am}{\hbar}}}= u\\
+  &\Rightarrow x = u \ {\sqrt{\frac{\hbar}{2am}}}\\
+  so\ now,\ we \ get,\\
+  &<x^{2}>= \int_{-\infty}^{\infty}x^{2}\ A^{2} e^{(-{\sqrt{\frac{2am}{\hbar}}}x)}^{2} dx \\\\
+  &= \int_{-\infty}^{\infty}x^{2}\ A^{2} e^{-u^{2}} {\sqrt{\frac{\hbar}{2am}}} \ du  \\\\
+  &=  A^{2}{\sqrt{\frac{\hbar}{2am}}} \int_{-\infty}^{\infty}{u^{2}{\frac{(\sqrt{\hbar})^{2}}{(\sqrt{2am})^{2}}}}\ e^{-u^{2}} \ du  \\\\
+  &=  A^{2}{\sqrt{\frac{\hbar}{2am}}} \int_{-\infty}^{\infty}{u^{2}{\frac{\hbar}{2am}}}\ e^{-u^{2}} \ du  \\\\ 
+  &=  A^{2}{\sqrt{\frac{\hbar}{2am}}}\ {\frac{\hbar}{2am}} \int_{-\infty}^{\infty}u^{2}\ e^{-u^{2}} \ du \ \ \ [equation :01] \\\\
+  here,let\ us\ take,
+  \int_{-\infty}^{\infty}u^{2}\ e^{-u^{2}} \ du\\\\
+  We\ know\\
+  Integral\ by\ parts,\\
+  \int f dg = fg - \int gdf\\
+  let, f = u\\
+  \Rightarrow df = du\\
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+  &And,\\
+  &dg = u e^{-u{^2}}\\
+  &\Rightarrow g = \int u e^{-u^{2}} du\\
+  &let \ substitute, v = -u^{2}\\
+  &\Rightarrow dv = -2udu\\
+  &\Rightarrow -2u du = dv\\
+  &\Rightarrow u du =-\frac{dv}{2}\\
+  Here,\\
+  &g = \int u e^{-u^{2}} du\ [equation:2]\\
+  &=\int- e^{v} \frac{dv}{2} \\
+  &=-\frac{1}{2}\int e^{v} dv\\
+  &=-\frac{1}{2} e^v \\
+  &g =-\frac{1}{2} e^{- u^{2}}+C\\ 
+  &when\ putting\ limits\ on\ equation\ 2 \ after\ integration\\
+  &=-\frac{1}{2}\lim_{t\to-\infty}[e^{v}]_{t}^{0}-\frac{1}{2}\lim_{t\to\infty}[e^{v}]_{0}^{t}\ \ \ [substituting\ back,-\frac{1}{2} e^v = -\frac{1}{2} e^{- u^{2}}]\\
+  &=-\frac{1}{2}\lim_{t\to-\infty}[e^{-u^{2}}]_{t}^{0}-\frac{1}{2}\lim_{t\to\infty}[e^{-u^{2}}]_{0}^{t}\\
+  &=-\frac{1}{2}(e^{0} - e^{-\infty^{2}}) --\frac{1}{2}(e^{\infty^{2}} - e^{0})\\
+  &=0\\
+  &Thus,-\frac{1}{2}e^{- u^{2}} = 0\\
+  &So,\ now,\ from\ equation \ 1 \ our\ Integral\ Part \\
+  &\int_{-\infty}^{\infty}u^{2}\ e^{-u^{2}} \ du\ \ \ [Integral\ by\ parts,\int f dg = fg - \int gdf]\\\\
+  &=-  \frac{ue^{- u^{2}}}{2}- \int_{-\infty}^{\infty} -\frac{e^{- u^{2}}}{2}  du\\
+  &=0 + \frac{1}{2} {\sqrt {\pi}} \ \ [we\ know,\int_{-\infty}^{\infty}e^{- x^{2}} =\sqrt {\pi}\ and\ putting \ limits\ on\ equation 02\ ]\\
+  &= \frac {\sqrt {\pi}}{2}\\
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+  &After\ using\ integration\ by\ parts\ and\ now\ putting \ back\ the\ values\ on\ equation 1,\\
+  &<x^{2}> =  A^{2}{\sqrt{\frac{\hbar}{2am}}}\ {\frac{\hbar}{2am}} \int_{-\infty}^{\infty}u^{2}\ e^{-u^{2}} \ du\\
+  &=A^{2}{\sqrt{\frac{\hbar}{2am}}}\ {\frac{\hbar}{2am}} \frac {\sqrt {\pi}}{2}\\
+  &={\sqrt{\frac{2am}{\pi \hbar}}}\ {\sqrt{\frac{\hbar}{2am}}}\ {\frac{\hbar}{2am}}\ \frac {\sqrt {\pi}}{2}\ \  \ [putting \ the\ value\ of \ A^{2}\ from\ Part\ (a)]\\
+  &<x^{2}> ={\frac{\hbar}{4am}}\\
+  &So,<x^{2}> = {\frac{\hbar}{4am}}\\\\
+  &Now\ computing,\\
+  &<{p}^{2}> =\int_{-\infty}^{\infty}\psi \ \hat{p^{2}}\ \psi dx\\\\
+   &<p> =\int_{-\infty}^{\infty}\psi \ -\hbar^{2}\frac{d^{2}}{dx^{2}}\ (\psi) dx \ \ \ \ [since,\hat{p} =-\hbar^{2}\frac{d^{2}}{dx^{2}}] \\\\
+   here,\\
+   &\frac{d}{dx}\ (\psi)= \frac{d}{dx}(A e^{( \frac{-amx^{2}}{\hbar})})\\\\
+   &= A e^{( \frac{-amx^{2}}{\hbar})}\frac{d}{dx}(\frac{-amx^{2}}{\hbar})\\\\
+   &= A e^{( \frac{-amx^{2}}{\hbar})}(-\frac{am}{\hbar}\ . \frac{d}{dx}{x^{2}})\\\\
+   &=A e^{( \frac{-amx^{2}}{\hbar})}(-\frac{am}{\hbar}\ )2x\\\\
+   &=-\frac{2 Aamx e^{( \frac{-amx^{2}}{\hbar})}}{\hbar}\\\\
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+   &\frac{d^{2}}{dx^{2}}\ (\psi)= \frac{d^{2}}{dx^{2}}\ (-\frac{2 Aamx e^{( \frac{-amx^{2}}{\hbar})}}{\hbar})\\\\
+   &=-\frac{2 Aam}{\hbar}\ . \frac{d}{dx}(\frac{xe^{( \frac{-amx^{2}}{\hbar})}}{{\hbar}})\\\\
+   &=-\frac{2 Aam}{\hbar}\ . \frac{d}{dx}(x)\ . e^{( \frac{-amx^{2}}{\hbar})}+x \frac{d}{dx}e^{( \frac{-amx^{2}}{\hbar})}\ \ [Product\ rule]\\\\
+   &=-\frac{2 Aam}{\hbar}\ . ( 1 . e^{( \frac{-amx^{2}}{\hbar})}+ (xe^{( \frac{-amx^{2}}{\hbar})}\frac{d}{dx}( \frac{-amx^{2}}{\hbar})))\\\\
+   &=-\frac{2 Aam}{\hbar}\ . ( e^{( \frac{-amx^{2}}{\hbar})}+ (xe^{( \frac{-amx^{2}}{\hbar})}( \frac{-am}{\hbar}\ . \frac{d}{dx}{x^{2}})))\\\\
+   &=-\frac{2 Aam}{\hbar}\ . ( e^{( \frac{-amx^{2}}{\hbar})}+ (xe^{( \frac{-amx^{2}}{\hbar})} \frac{-am}{\hbar} \ . 2x))\\\\
+   &=-\frac{2 Aam}{\hbar}( e^{( \frac{-amx^{2}}{\hbar})} -\frac{2amx^{2} e^{( \frac{-amx^{2}}{\hbar})}}{\hbar}) \\\\
+   &=-\frac{2 Aam}{\hbar}(\frac{\hbar e^{( \frac{-amx^{2}}{\hbar})} -{2amx^{2} e^{( \frac{-amx^{2}}{\hbar})}}}{\hbar}) \\\\
+   &=\frac{2 Aam}{\hbar}\ . {\frac{(2amx^{2}-\hbar)e^{\frac{-amx^{2}}{\hbar}}}{\hbar}}\\\\
+   So, \ now,\\
+   &<p^{2}> =\int_{-\infty}^{\infty}\psi \ -\hbar^{2}\frac{d^{2}}{dx^{2}}\ (\psi) dx \\\\
+   &=\int_{-\infty}^{\infty}\psi \ (-\hbar^{2}) \frac{2 Aam}{\hbar}\ . {\frac{(2amx^{2}-\hbar)e^{\frac{-amx^{2}}{\hbar}}}{\hbar}}\\\\
+   &=\int_{-\infty}^{\infty}\psi \ (-\hbar^{2}) \frac{2 Aame^{\frac{-amx^{2}}{\hbar}}}{\hbar}\ . (\frac{2amx^{2}}{\hbar} -1)\\\\
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+  &=\int_{-\infty}^{\infty}\psi \ (-\hbar^{2}) -\frac{2 Aame^{\frac{-amx^{2}}{\hbar}}}{\hbar}\ . (1-\frac{2amx^{2}}{\hbar})dx\\\\
+  &=\int_{-\infty}^{\infty}\psi \ (\hbar^{2}) \frac{2 Aame^{\frac{-amx^{2}}{\hbar}}}{\hbar}\ . (1-\frac{2amx^{2}}{\hbar}) dx\\\\
+  &=\hbar^{2}\int_{-\infty}^{\infty}\psi \  \frac{2 Aame^{\frac{-amx^{2}}{\hbar}}}{\hbar}\ . (1-\frac{2amx^{2}}{\hbar})\\\\
+  &=\hbar^{2}\int_{-\infty}^{\infty}\psi \ \psi \ \frac{2 am}{\hbar}\ . (1-\frac{2amx^{2}}{\hbar})\ \ \ [since, \psi =A e^{( \frac{-amx^{2}}{\hbar})}]\\\\
+  &=\hbar^{2}\int_{-\infty}^{\infty}\psi^{2}  \ \frac{2 am}{\hbar}\ . (1-\frac{2amx^{2}}{\hbar})\\\\
+  &=\hbar^{2}\int_{-\infty}^{\infty}\psi^{2}  \ ( \frac{2 am}{\hbar} -\frac{4a^{2}m^{2}x^{2}}{\hbar^{2}}) dx\\\\
+  &= \hbar^{2}\int_{-\infty}^{\infty}\psi^{2}  \  \frac{2 am}{\hbar} dx +\hbar^{2}\int_{-\infty}^{\infty}-\psi^{2}  \ \frac{4a^{2}m^{2}x^{2}}{\hbar^{2}} dx \\\\
+  &=\hbar^{2}\frac{2 am}{\hbar}\int_{-\infty}^{\infty}\psi^{2} dx - \hbar^{2} \frac{4a^{2}m^{2}}{\hbar^{2}}\int_{-\infty}^{\infty} \psi^{2} x^{2} dx  \\\\
+  &=2am\hbar \int_{-\infty}^{\infty}\psi^{2} dx - {4a^{2}m^{2}}\int_{-\infty}^{\infty} \psi^{2} x^{2} dx  \\\\
+  &=2am\hbar \int_{-\infty}^{\infty}\psi^{2} dx - {4a^{2}m^{2}}\int_{-\infty}^{\infty}  x^{2} A^{2} e^{(\frac{-2amx^{2}}{\hbar})} dx \ \  \ [since, \psi =A e^{( \frac{-amx^{2}}{\hbar})}] \\
+  & we\ got\ from\ part(a),\int_{-\infty}^{\infty}\psi^{2} dx =1\\
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+  &and,\ from\ part(c),  \int_{-\infty}^{\infty}x^{2}\ A^{2} e^{(\frac{-2amx^{2}}{\hbar})} dx= {\frac{\hbar}{4am}}\\\\
+  &so,\\
+  &=2am\hbar \int_{-\infty}^{\infty}\psi^{2} dx - {4a^{2}m^{2}}\int_{-\infty}^{\infty}  x^{2} A^{2} e^{(\frac{-2amx^{2}}{\hbar})} dx\\\\
+  &=2am\hbar .1 -4a^{2}m^{2} ({\frac{\hbar}{4am}})\\\\
+  &= 2am\hbar -am\hbar\\\\
+  &=am\hbar\\\\
+  &So,<p^{2}>=am\hbar\\\\
+  &Therefore, <x^{2}> = {\frac{\hbar}{4am}}\ and, \ <p^{2}>=am\hbar\\\\
+  &Answer:<x^{2}> = {\frac{\hbar}{4am}},\\
+  &<p^{2}>=am\hbar\\\\
+\end{align*}
+\newpage\vspace{5mm}
+ \[
+    \textbf{\underline{ Part(d)}}
+    \]
+\hspace{20mm}
+\large
+\begin{align*}
+  &Here,\\
+  &{\sigma_{x}}^{2}= <x^{2}> - <x>^{2}\\\\
+  &\sigma_{x}=\sqrt{<x^{2}> - <x>^{2}}\\\\
+  &=\sqrt{\frac{\hbar}{4am} -0}\ \ \ [since, we\ got \ <x^{2}> \ from\ part\ (c)\ and\ <x>\ from\ part(b)]\\\\
+  &=\sqrt{\frac{\hbar}{4am}}\\\\
+  &\sigma_{x}=\sqrt{\frac{\hbar}{4am}}\\\\
+  And,\\
+  &{\sigma_{p}}^{2}= <p^{2}> - <p>^{2}\\\\
+  &\sigma_{p}=\sqrt{<p^{2}> - <p>^{2}}\\\\
+  &=\sqrt{am\hbar - 0}\ \ \ [since, we\ got \ <p^{2}> \ from\ part\ (c)and\ <p>\ from\ part(b)]\\\\
+  &=\sqrt{am\hbar}\\\\
+  &\sigma_{p}=\sqrt{am\hbar}\\\\
+  &Now,we\ have\ to\ prove,\\
+  &\sigma_{x}\sigma_{p}\geqslant \frac{\hbar}{2}\\\\
+\end{align*}
+\newpage\vspace{5mm}
+\hspace{20mm}
+\large
+\begin{align*}
+  &So, \ here,\\
+  &\sigma_{x}\sigma_{p}\\\\
+  &=\sqrt{\frac{\hbar}{4am}}\ \sqrt{am\hbar}\\\\
+  &=\sqrt{\frac{\hbar am\hbar}{4am}}\\\\
+  &=\sqrt{\frac{\hbar^{2}}{4}}\\\\
+  &=\frac{\hbar}{2}\\\\
+  &\sigma_{x}\sigma_{p}=\frac{\hbar}{2}\\\\
+  &Thus,\\
+  &\sigma_{x}\sigma_{p}\geqslant \frac{\hbar}{2} \ \ \ \ \ \ [Proved]\\\\ 
+  &Therefore,\ as,\ \ \sigma_{x}\sigma_{p}=\frac{\hbar}{2},so\ it\ states\ that,\\
+  &the\ minimum\ uncertainty\ is\ only\ achieved\ by\ Gaussian\ wave\ function.\\ 
+  &Our\ Gaussian\ wave-function\ holds\ Heisenberg’s\ Uncertainty\ principle\\
+  &and\ so\ our\ particle’s\ wave-function\ is\ quantum\ mechanical.\\\\\\\\
+  &||Thank\ you||
+\end{align*}
+\end{homeworkProblem}
+\pagebreak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%                       END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
