@@ -1,0 +1,640 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{xfrac}
+\usepackage{bm}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage[thinc]{esdiff}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+%\pagestyle{fancy}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+
+
+\newcommand{\hmwkTitle}{Final Exam\ \#Set-09}
+\newcommand{\hmwkDueDate}{GROUP NAME - WaiT A SecanD}
+\newcommand{\hmwkClass}{MAT120 }
+\newcommand{\hmwkClassTime}{}
+\newcommand{\hmwkClassInstructor}{\item ANIKA PRIODORSHINEE MRITTIKA  [ Sec-07, ID-19101298 ]\\[5mm]
+ANIKA TAHSIN MIAMI  [ Sec-02,  ID-19101518 ]\\[5mm]
+SYED ZUHAIR HOSSAIN  [ Sec-07, ID-19101573 ]\\[5mm]
+AKASH GHOSH  [ Sec-11, ID-19101425 ]\\[5mm]
+ADIBA ANBAR AHONA  [ Sec-12, ID-19101257 ]\\[10mm]
+}
+\newcommand{\hmwkAuthorName}{\textbf{BRAC University}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\texttt{\textbf{\hmwkClass:\ \hmwkTitle}}}\\
+    \normalsize\vspace{0.2in}{\texttt{\textbf{\normalsize \hmwkDueDate}}}\\
+    \vspace{0.1in}\large{\texttt{\hmwkClassInstructor\ \hmwkClassTime}}
+    \vspace{2in}
+}
+\author{\texttt{\hmwkAuthorName}}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 01%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}
+    \[      \textbf{\underline{Answer to the Question Number One}}
+    \]
+    \textbf{[Part a]}\\
+    \vspace{5mm}\\
+    \tab $\int^1_0 \int^x_0 4y \sqrt{x^2 - y^2}$dy dx 
+\\
+
+Let , \\
+$ x^2 - y^2 = u$\\
+$\Rightarrow (0-2y)$ dy = du\\
+$\Rightarrow-2y$ dy = du \\
+$\Rightarrow4y$ dy = $-2$ du\\
+\\
+\\ If , $y=0$ ; $u =x^2$\\
+\\ If , $y=x$ ; $u=0$\\
+\\
+\\
+\\
+\\$\int^1_0 \int^0_{x^2}(-2\sqrt{u})$ du dx\\
+\\$= -2 \int^1_0 \left[\frac{(u)^{(\frac{1}{2}+1)}}{\frac{3}{2}} \right]^0_{x^2} $ dx\\
+\\$= -2 \int^1_0 \left[\frac{(u)^{\frac{3}{2}}}{\frac{3}{2}} \right]^0_{x^2} $ dx\\
+\\$= -2 \int^1_0 \left[\frac{(x^2 - y^2)^{\left(\frac{3}{2}\right)}}{\frac{3}{2}} \right]^x_{0} $ dx\\
+\\$=-\frac{-2*2}{3} \int^1_0\big[[x^2 - x^2]^{\left(\frac{3}{2}\right)} - (x^2-0)^{\frac{3}{2}} \big] $ dx\\
+\\$=-\frac{4}{3} \int^1_0 -(x^2)^{\frac{3}{2}} $\\
+\\$=\frac{4}{3} \int^1_0x^3  $dx\\
+\\$= \frac{4}{3}\left[\frac{x^4}{4}\right]^1_0 $\\
+\\$= \frac{4}{3} * \frac{1}{4}$ $ \bigg[(1^4)- 0\bigg]$\\
+\\$=\frac{1}{3}$\\
+\vspace{3mm}\\
+\tab\tab\tab\texttt{[ANSWER]}
+
+\newpage
+\textbf{[Part b]}\\
+    \vspace{5mm}\\
+\tab $\int^2_1 \int^2_z \int^{\sqrt{3}y}_0 \frac{y}{2x^2 +2y^2} $ dx dy dz
+\\
+
+Let ,\\
+$u = \frac{x}{y} $ ; $ x= uy$\\
+$\Rightarrow dx = du $\\
+\\
+\\
+If , x$ = \sqrt{3} y $ ; u = $\sqrt{3}$\\
+\\ If , x$ =0 $   ; u = $0$\\
+\\
+\\ $\int^2_1 \int^2_z \int^{\sqrt{3}}_0 \frac{y * y du}{2 u^2 y^2 +2y^2}$ dy dz\\
+\\ $ = \int^2_1 \int^2_z \int^{\sqrt{3}}_0 \frac{ y^2 du}{2 y^2(u^2 +1)}$ dy dz\\
+\\ $ =\frac{1}{2} \int^2_1 \int^2_z \int^{\sqrt{3}}_0 \frac{  du}{(u^2 +1)}$ dy dz\\
+\\ $ =\frac{1}{2} \int^2_1 \int^2_z \left[tan^{-1} (u)\right]^{\sqrt{3}}_0$ dy dz\\
+\\ $ =\frac{1}{2} \int^2_1 \int^2_z \left[tan^{-1} (\frac{x}{y})\right]^{\sqrt{3}y}_0$ dy dz\\
+\\ $ =\frac{1}{2} \int^2_1 \int^2_z \left[tan^{-1} (\sqrt{3}) - tan^{-1}( 0)\right]$ dy dz\\
+\\ $ =\frac{1}{2} \int^2_1 \int^2_z \left(\frac{\pi}{3}\right)$ dy dz\\
+\\ $ =\left(\frac{1}{2}\right) \left(\frac{\pi}{3}\right) \int^2_1 \int^2_z $ dy dz\\
+\\ $ =\left(\frac{\pi}{6}\right) \int^2_1 \left[y\right]^2_z $  dz\\
+\\ $ =\left(\frac{\pi}{6}\right) \int^2_1 \left[2-z\right] $  dz\\
+\\ $ =\left(\frac{\pi}{6}\right) \left[\left[2z\right]^2_1 - \left[\frac{z^2}{2}\right]^2_1\right] $  \\
+\\ $ =\left(\frac{\pi}{6}\right) \left[\left(4-2\right) - \left(\frac{4}{2} - \frac{1}{2}\right)\right] $  \\
+\\$= \frac{\pi}{6}(2-\frac{3}{2})$\\
+\\$= \frac{\pi}{6} \left(\frac{4-3}{2}\right)$\\
+\\$= \frac{\pi}{6}* \frac{1}{2}$\\
+\\$= \frac{\pi}{12}$  \\
+\vspace{3mm}\\
+\tab\tab\tab\texttt{[ANSWER]}
+\end{homeworkProblem}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 02%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}
+    \[      \textbf{\underline{Answer to the Question Number Two}}
+    \]
+    \section{Solve the following 1st order DE:}
+\textbf{[Part a]}\\
+ \tab $\frac{2}{3}x\frac{dy}{dx}-{\frac{2}{3}y = \frac{2}{3}x} ; \ y(1)=2 $\\
+ \vspace{5mm}\\
+\begin{equation*}
+\begin{aligned}
+Given \ equation, \\
+   &  \frac{2}{3}x\diff{y}{x}-{\frac{2}{3}y = \frac{2}{3}x}\\
+   & \frac{2}{3}[x\diff{y}{x}-y] = \frac{2}{3}x\\
+   & x\diff{y}{x}-y = x\\
+   & \diff{y}{x}-\frac{1}{x}y = 1\\
+   \\ 
+   Solution:  \\
+   & y \frac{1}{x} = \int 1* \frac{1}{x} dx + c\\
+   & \frac{y}{x} = \ln x + c\\
+   & y = x (\ln x + c ).....[1]\\
+   &Again\ ,\ y(1)=2 \ then, \\ 
+  & 2 = 1 * (\ln 1 + c)\\
+   &2 = \ln 1 + c\\
+   & \therefore c = 2\\
+   & Putting\ the\ value\ of\ c\ into\ [1]\\
+   & y = x(\ln x+2)\\
+   \vspace{3mm}\\
+\tab\tab\tab\texttt{[ANSWER]}
+ \end{aligned}
+ \qquad\Bigg\vert\qquad
+ \begin{aligned}
+  & Comparing\ with\ general\\\
+  & equation\ of\ 1st\ order\ DE : \\ 
+  & y' + P(x) y = Q(x)\\
+ & Here,\ P(x) = \frac{1}{x}\ ; \ Q(x) = 1\\ 
+ & general\ solution:\\ 
+ & y I(x) = \int I(x) Q(x) dx + c\\ \\
+  & Here,\ I(x)= e^{\int P(x)dx}\\
+  & = e^{\int{-\frac{1}{x}dx}}\\
+  &=  e^{-\ln x}\\
+  &= e^\ln{\frac{1}{x}}\\
+  &= \frac{1}{x}\\
+ \end{aligned}
+ \end{equation*} 
+ \newpage
+\textbf{[Part b]}\\ 
+\tab $(32y-8cosy) \frac{dy}{dx} - 24x^2 = 0 \ ; \ y(0)=0 $\\
+\vspace{5mm}\\
+\begin{equation*}
+\begin{aligned}
+given\ equation,\\
+& (32y-8\cos y) \diff{y}{x} = 24x^2\\
+& 8 (4y-\cos y) \diff{y}{x} = 24 x^2\\
+& (4y-\cos y) \diff{y}{x} = 3x^2\\
+& (4y-\cos y) dy = 3 x^2 dx\\
+& \int (4y-\cos y) dy = \int 3x^2 dx\\
+& \int 4ydy - \int \cos y dy = 3 \int x^2 dx\\
+& 4 \frac{y^2}{2} - \sin y = 3 \frac{x^3}{3} + c\\
+& 2 y^2 - \sin y = x^3+c..........[1]\\\\
+given\ condition,\
+& y(0)=0\\
+& 2*0-\sin 0 = 0 + c\\
+& \therefore c =0;\\
+putting\ value\ of\ c\ in\ to\ [1],\\
+& 2 y^2 - \sin y = x^3+ 0\\
+& 2 y^2 - \sin y = x^3\\
+\vspace{3mm}\\
+\tab\tab\tab\texttt{[ANSWER]}
+\end{aligned}
+\end{equation*}
+\end{homeworkProblem}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 03%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}
+    \[      \textbf{\underline{Answer to the Question Number Three}}
+    \]
+    \textbf{[Part a]}
+    \\
+    \[
+    \begin{split}
+    Given,
+    \\
+    &(2 e^{2y} - 2y cos(xy)) dx + (4xe^{2y} - 2x cos(xy) + 4y ) dy =0
+    \\
+    &here,
+    \\
+    &M(x,y) = (2 e^{2y} - 2y cos (xy))
+    \\
+    &N(x,y) = (4xe^{2y} - 2 x cos (xy) + 4y)
+    \\
+    \\
+    &\frac{\partial M}{\partial y} = \frac{\partial }{\partial y} (2 e^{2y} - 2y cos(xy))
+    \\
+    &\Rightarrow \frac{\partial M}{\partial y} = \frac{\partial }{\partial y} (2 e^{2y}) \frac{\partial}{\partial y} (2 y cos(xy))
+    \\
+    &\Rightarrow \frac{\partial M}{\partial y} = 4 e^{2y} - 2 (cosxy - xy(sinxy)
+    \\
+    \\
+    & \frac{\partial N}{\partial x} = \frac{\partial }{\partial x} (4 x e^{2y} - 2 x cos(xy) + 4y)
+    \\
+     & \frac{\partial N}{\partial x} = \frac{\partial}{\partial x} (4 x e^{2y}) - \frac{\partial }{\partial x} (2x cos (xy) + 4y)
+     \\
+      & \frac{\partial N}{\partial x} = 4 e^{2y} - 2( cos (xy) - xy sin (xy))
+      \\ \\ \\
+      &\text{As, $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$ ,we have an exact equation}\\
+   & We\: know,\\
+    & \psi (x,y) = C\\
+& Again,\\
+&\psi (x,y) = \int N(x,y)dy \\
+& = \int (4xe6(2y)-2xcos(xy)+4y)dy\\
+& = \int 4ydy - \int 2cos(xy)dy+ \int 4xe^(2y)dy\\
+& = 2y^2 - 2sin(xy)+2xe6(2y)+c_1\\
+&\psi (x,y) = c_2\\
+& 2y^2 - 2sin(xy)+2xe^(2y)+c_1 = c_2\\
+&\therefore 2y^2 - 2sin(xy)+2xe^(2y) = C
+\\ \\ \\ \\ 
+    &\texttt{[ANSWER]}
+    \end{split}
+    \]
+\textbf{[Part b]}
+       \begin{align*}
+           & (8x^2 + 12y^2 -80)dy = -4xydx\\
+& \Rightarrow (8x^2 + 12y^2 -80)dy + 4xydx=0\\
+& \Rightarrow (8x^2 + 12y^2 -80)\frac{dy}{dx} + 4xy = 0;\:\:\:[divided\:by\:dx] \\
+& \Rightarrow (8x^2 + 12y^2 -80)y' + 4xy = 0\\
+&\Rightarrow 4xy^4 + y^3(8x^2+12y^2-80)y' = 0 ;\:\:\:[multiplied\: by\: y^3]\\
+&\Rightarrow 4xy^4dx + y^3(8x^2+12y^2-80)dy = 0;\:\:\:[multiplied\: by\: dx]
+       \end{align*}
+       \begin{align*}
+           & Here,\\
+           & M(x,y) = 4xy^4\\
+           & N(x,y) = y^3(8x^2+12y^2-80)\\
+           & \frac{\partial }{\partial y}(M) = \frac{\partial }{\partial y}4xy^4 = 16xy^3\\
+& \frac{\partial}{\partial x}(N) = \frac{\partial }{\partial x} y^3 (8x^2 + 12y^2 - 80)\\
+& \Rightarrow \frac{\partial }{\partial x}(N) =
+y^3 \frac{\partial }{\partial x}(8x^2 + 12y^2-80)\\
+& \Rightarrow\frac{\partial }{\partial x}(N) = y^3 16x = 16xy^3
+       \end{align*}
+      \begin{align*}
+          As,\: \frac{\partial M }{\partial y} = \frac{\partial N}{\partial x},\: we\:get\:an\:exact\:equation.
+      \end{align*}
+      \begin{align*}
+          & we\: know,\; \psi (x,y)= c\\
+& so,\\
+& \psi (x,y) = \int N(x,y)dy\\
+& \;\:\:\:\:\:\:\:\:\:= \int y^3 (8x^2 +12y^2 -80)dy\\
+& \;\:\:\:\:\:\:\:\:\: = \int 4(-20+3y^2 + 2x^2)y^3 dy\\
+& \;\:\:\:\:\:\:\:\:\: = 4 \int (-20+3y^2+2x^2)y^3 dy\\
+& Here,\: Let,\: u = (-20+3y^2 + 2x^2 ) and\: v'= y^3
+      \end{align*}
+      \pagebreak
+      \begin{align*}
+          \text{Applying integration by parts}\\
+         & 4 \int (-20+3y^2 + 2x^2)y^3 dy\\
+& = 4(\frac{1}{4}y^4 (-20+3y^2 + 2x^2 )- \int \frac{3y^5}{2}dy)\\
+& = 4(\frac{1}{4}y^4 (-20+3y^2 +2x^2 - \frac{y^6}{4})\\
+& = 2y^6 + 2x^2y^4-20y^4
+      \end{align*}
+      \begin{align*}
+      & \therefore \psi (x,y) = \int N (x,y)dy = 2y^6 + 2x^2y^4-20y^4 +c_1\\
+      & \psi (x,y) = c_2\\
+      & 2y^6 + 2x^2y^4-20y^4 + c_1 = c_2\\
+      &\therefore 2y^6 + 2x^2y^4-20y^4 = C\\
+      \\ \\ \\ \\ \\ \\ \\ \\ 
+    \texttt{[ANSWER]}
+      \end{align*}
+\end{homeworkProblem}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 04%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{homeworkProblem}
+    \[      \textbf{\underline{Answer to the Question Number Four}}
+    \]
+    \textbf{[Part a]}
+    \\
+     \tab$y''+y'+\frac{17}{4}y=0;y(0)=-1,y'(0)=2$\\
+    \vspace{5mm}\\
+Let,
+\begin{align*}
+    &y=e^{rt}\:\:\:where\:\:\:r=root\:\:\:of\:\:\:the\:\:\:auxiliary\:\:\:equation\\
+    &\therefore y''=r^2 e^{rt},y'=r e^{rt}\\
+    &\therefore r^2 e^{rt}+r e^{rt}+\frac{17}{4}e^{rt}=0\\
+    &\Rightarrow r^2+r+\frac{17}{4}=0 &[divided\:\:\:by\:\:\:e^{rt}]\\
+    &\therefore r=\frac{-1\pm \sqrt{1-17}}{2}=-\frac{1}{2}\pm2i
+\end{align*}
+
+The two solutions of the differential equation,
+\begin{align*}
+    &y_1(t)=e^{(-\frac{1}{2}+2i)t}=e^{-\frac{t}{2}}[\cos (2t)+i\:\sin (2t)]\\
+    &y_2(t)=e^{(-\frac{1}{2}-2i)t}=e^{-\frac{t}{2}}[\cos (2t)-i\:\sin (2t)]\\
+    &Let,\\
+    &u(t)=e^{-\frac{t}{2}}\cos (2t)\\
+    &v(t)=e^{-\frac{t}{2}}\sin (2t)
+\end{align*}
+\begin{align*}
+    \therefore y_c(t)&=c_1u(t)+c_2v(t)\\
+    &=e^{-\frac{t}{2}}(c_1\cos (2t)+c_2\sin (2t))\\
+\end{align*}
+
+For $y(0)=-1,$
+\begin{align*}
+    -1&=(c_1\cos 0+c_2\sin 0)\\
+    \therefore c_1&=-1
+\end{align*}
+
+For $y'(0)=2,$
+\begin{align*}
+    y'(t)&=\frac{d}{dt} (e^{-\frac{t}{2}})(c_1\cos (2t)+c_2\sin (2t))+\frac{d}{dt}(c_1\cos (2t)+c_2\sin (2t))e^{-\frac{t}{2}}\\
+    &=-\frac{1}{2} e^{-\frac{t}{2}}(c_1\cos (2t)+c_2\sin (2t))+(-2c_1\sin (2t)+2c_2\cos (2t))e^{-\frac{t}{2}}\\
+    \Rightarrow 2&=-\frac{1}{2}c_1+2c_2\\
+    \Rightarrow 2c_2&=\frac{1}{2}(-1)+2\\
+    \therefore c_2&=\frac{3}{4}
+\end{align*}
+$$\therefore y_c=e^{-\frac{t}{2}}(-\cos (2t)+\frac{3}{4}\sin (2t))$$\\
+\vspace{3mm}\\
+\tab\tab\tab \texttt{[ANSWER]}
+\newpage
+\textbf{[Part b]}
+\\
+\tab$\frac{1}{2}\frac{d^2y}{dy^2}-5\frac{dy}{dx}+\frac{25}{2}y=0;y(0)=1,y'(0)=1$\\
+\vspace{5mm}\\
+Let,
+\begin{align*}
+    &y=e^{rt}\:\:\:where\:\:\:r=root\:\:\:of\:\:\:the\:\:\:auxiliary\:\:\:equation\\
+    &\therefore y''=r^2 e^{rt},y'=r e^{rt}\\
+    &\frac{1}{2}\frac{d^2y}{dy^2}-5\frac{dy}{dx}+\frac{25}{2}y=\frac{1}{2} y''-5y'+\frac{25}{2}y=0\\
+    &\Rightarrow \frac{1}{2}r^2 e^{rt}-5r e^{rt}+\frac{25}{2}e^{rt}=0\\
+    &\Rightarrow \frac{1}{2}r^2-5r\frac{25}{2}=0 &[divided\:\:\:by\:\:\:e^{rt}]\\
+    &\Rightarrow r^2-10r+25=0\\
+    &\Rightarrow(r-5)^2=0
+\end{align*}\\
+The roots $r_1=r_2=5$ are real and equal.\\
+We know, if a differential equation is linear and have constant coefficient, then for root $\lambda_1=\lambda_2$, the general solution, $y_c=c_1 e^{\lambda_1x}+c_2 xe^{\lambda_1x}$
+$$y_c=c_1e^{5t}+c_2 te^{5t}$$\\
+For $y(0)=1,$\\
+   $$1=c_1$$\\
+For $y'(0)=1,$
+\begin{align*}
+y’&=5c_1 e^{5t}+c_2 e^{5t}+5c_2 te^{5t}\\
+\Rightarrow 1&=5c_1+c_2\\
+\Rightarrow c_2&=1-5\\
+&=-4\\
+\end{align*}
+$$\therefore y_c=e^{5t}-4te^{5t}$$\\
+\vspace{3mm}\\
+\tab\tab\tab \texttt{[ANSWER]}
+\end{homeworkProblem}
+\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+                %Solution Number 05%
+                
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{homeworkProblem}
+    \[ \textbf{\underline {Answer to the Question Number Five}}
+    \]
+    \textbf{ Solve the following Second Order Differential Equation}
+    \\
+    \textbf{[Part a]}
+    \\
+    \[
+    \begin{split}
+    Given, 
+    \\
+    &{2y}'' - {4y}' + 2y = 2e^{x}
+    \\
+    \Rightarrow &{y}'' - {2y}' + y = e^x \ \ \ \ \ \ \ \ [\text{dividing both side by 2}]
+    \\ \\
+    let,
+    \\
+    &y = e^{mx}
+    \\
+    &y' = m e^{mx}
+    \\
+    &{y}'' = m^2 e^{mx}
+    \\
+    \text{For complimentary function:}
+    \\
+    &\therefore m^2 e^{mx} - 2me^{mx} + e^{mx} = 0
+    \\
+    \Rightarrow & m^2 - 2m + 1 = 0\\
+    \Rightarrow & m^2 - m -m + 1 = 0\\
+    \Rightarrow & m(m-1) - 1(m-1) = 0\\
+    \Rightarrow & (m-1)(m-1) = 0\\
+    \therefore  \ & m_1 = m_2 = 1\\
+    \\
+    \therefore \ & y_c = c_1 e^x + c_2 x e^x
+    \end{split}
+    \]
+    \pagebreak
+    \[
+    \begin{split}
+        \textbf{For particular solution:}\\
+        y_p &= x^2 (A e^x) \ \ \ \ \ \ \ \ \ \ \ [to \ make \ it \ distinct \ from \ y_c]
+        \\
+        {y_p}' &= (A e^x x^2) \frac{d}{dx}
+        \\
+        &= A e^x x^2 + 2 A e^x x
+        \\[5mm]
+        & {y_p}'' = (A e^x x^2) \frac{d^2}{dx^2}
+        \\
+        &= (A e^x x^2)\frac{d}{dx} + (2 A e^x x) \frac{d}{dx}
+        \\
+        &= A 2 e^x +  A e^x x^2 + A 2 e^x x + A 2 e^x x
+        \\
+        &= A(2e^x + e^xx^2 + 4 e^x x)
+        \\\\
+        &\therefore {y}'' - 2{y}' + y = e^x
+        \\
+        &\Rightarrow A 2 e^x + A e^x x^2 + A 4 e^x x - 2 A e^x x + A e^x x^2 = e^x
+        \\
+        &\therefore 2 A e^x = e^x
+        \\
+        &\Rightarrow 2 A = 1
+        \\
+        &\therefore A = \frac{1}{2}
+        \\
+        &\therefore y_P = \frac{1}{2} \times e^x x^2
+        \\\\
+        \therefore y_G(x) &= y_C(x) + y_P(x)
+        \\
+        &= c_1 e^x + c_2 x e^x + \frac{e^x x^2}{2}
+        \\
+        \\
+        \\
+        & & \texttt{[ANSWER]}
+    \end{split}
+    \]
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    \textbf{[Part b]}
+    \\
+    \vspace{5mm}
+    \[
+    \begin{split}
+        Given,
+        \\
+        & 5 \frac{d^2y}{dx^2} + 20y = 15 sin 2x
+        \\
+        \Rightarrow & 5{y}'' + 20 y = 15 sin 2x 
+        \\
+        \Rightarrow & {y}'' + 4y = 3 sin 2x \ \ \ \ \ \ \ \ \ [dividing \  both \ side \ by \ 5]
+        \\
+        \\
+        let,
+        \\
+        & y = e^{mx}
+        \\
+        \Rightarrow & y' = m  e^{mx} 
+        \\
+        \Rightarrow & y'' = m^2  e^{mx}
+        \\ \\ \\
+        \textbf{For complimentary function:}
+        \\
+        m^2  e^{mx} + 4  e^{mx} = 0
+        \\
+        \Rightarrow & m^2 + 4 = 0
+        \\
+        \Rightarrow & m^2 = -4 
+        \\
+        \therefore & m = \pm \sqrt{-4}
+        \\
+        & = \pm i \sqrt{4}
+        \\
+        & = 0 \pm  i\sqrt{4}
+        \\ \\
+        y_c &= e^{0 \cdot x} (c_1 cos \sqrt{4}x + c_2 sin \sqrt{4}x)
+        \\
+        y_c &= c_1 cos \sqrt{4}x + c_2 sin \sqrt{4}x
+        \\
+        &= c_1 cos 2x + c_2 sin 2x
+        \\ \\ \\
+        \textbf{For particular solution:}
+        \\
+        y_p &= e ^{0 \cdot x} (A x cos 2 x + B x sin 2x)
+        \\
+        &= A x cos 2x + B x sin 2x
+        \\
+        \Rightarrow {y_p}' &= A cos 2x - 2 A sin 2 x + B sin 2x + 2Bx cos 2x
+        \\
+        \Rightarrow {y_p}'' &= - 2A sin 2x - 2A sin 2x - 4Ax cos 2x + 2B cos 2x + 2B cos 2x - 4B sin 2 x
+        \\
+        & = -4A sin 2x - 4 A x cos 2x + 4B cos 2x - 4B x sin 2x
+        \\\\
+        \therefore y'' + 4y &= -4A sin 2x - 4Ax cos 2x + 4B cos 2x - 4B x sin 2x + 4 cos 2x + 4B x sin 2x 
+        \\[5mm]
+        \Rightarrow 3 sin 2x &=  -4A sin2x + 4 B cos 2x . \ . \ . \ . \  . \ . \ . \ . \ . \ . \ . \ . \ . \ (i)
+    \end{split}
+    \]
+    \pagebreak
+    
+    \[
+    \begin{split}
+        \text{equate coefficient of sin(2x) on both sides of equation (i):}
+        \\
+        -4A = 3
+        \\
+        A = - \frac{3}{4}
+        \\ \\
+        \text{equate coefficient of cos(2x) on both sides of equation (i):}
+        \\
+        4B = 0
+        \\
+        \therefore B = 0
+        \\
+        \\
+        \therefore y_p &= A cos 2 x + 0 \times sin 2x 
+        \\
+        & = - \frac{3}{4} x cos 2 x
+        \\ \\
+        \therefore y_G(x) &= y_c (x) + y_p (x)
+        \\
+        &= c_1 cos 2x + c_2 sin 2x - \frac{3}{4} x cos 2 x
+        \\ \\ \\ \\ 
+        \texttt{[ANSWER]}
+        \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ 
+        \texttt{[THANK YOU]}
+    \end{split}
+    \]
+\end{homeworkProblem}
+
+%                       END
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
